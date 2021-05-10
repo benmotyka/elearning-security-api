@@ -7,7 +7,8 @@ const { graphqlHTTP } = pkg;
 
 import graphqlSchema from "./graphql/schema/index.js"
 import graphqlResolvers from "./graphql/resolvers/index.js"
-// import verifyToken from "./middleware/verifyToken.js";
+import verifyToken from "./middleware/verifyToken.js";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 const app = express();
@@ -23,8 +24,7 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyParser.json());
-
-// app.use(verifyToken);
+app.use(verifyToken);
 
 app.use(
   "/graphql",

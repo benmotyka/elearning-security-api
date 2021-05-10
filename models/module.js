@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const moduleSchema = new mongoose.Schema({
+    index: {
+        type: Number,
+        required: true,
+        unique: 'This index is already in use'
+    },
     title: {
         type: String,
         required: true,

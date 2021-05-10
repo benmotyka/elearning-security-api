@@ -10,7 +10,8 @@ schema {
 }
 
 type RootQuery {
-    loginUser(email: String!, password: String!): LoginData!
+    loginUser(email: String!, password: String!): LoginData
+    modules: [Module!]!
 }
 
 type RootMutation {
@@ -32,5 +33,13 @@ type User {
 input UserInput {
     email: String!
     password: String!
+}
+
+type Module {
+    _id: ID!
+    index: Float!
+    title: String!
+    description: String!
+    difficulty: Float!
 }
 `)
