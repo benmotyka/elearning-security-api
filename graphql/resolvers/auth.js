@@ -25,7 +25,6 @@ export default {
         if (!isEqual){
             throw new Error("Incorrect password!");
         }
-        console.log("hehe");
         const token = jwt.sign({userId: user.id, email: user.email}, process.env.JWT_SECRET, {expiresIn: 600,})
         return {userId: user.id, token: token, tokenExpiration: 600};
     }

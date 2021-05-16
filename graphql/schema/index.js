@@ -12,6 +12,7 @@ schema {
 type RootQuery {
     loginUser(email: String!, password: String!): LoginData
     modules: [Module!]!
+    getAccountInfo: AccountData!
 }
 
 type RootMutation {
@@ -22,6 +23,11 @@ type LoginData {
     userId: ID!
     token: String!
     tokenExpiration: Int!
+}
+
+type AccountData {
+    email: String!
+    createdAt: String!
 }
 
 type User {

@@ -11,6 +11,7 @@ export default (req, res, next) => {
       req.isAuth = false;
       return next();
     }
+
     let decodedToken;
     try {
       decodedToken = jwt.verify(token, process.env.JWT_SECRET);
