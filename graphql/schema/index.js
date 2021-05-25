@@ -18,6 +18,7 @@ type RootQuery {
 type RootMutation {
     registerUser(userInput: UserInput): User
     resetPassword(oldPassword: String!, newPassword: String!): UserEmail
+    confirmEmail(token: String!): UserEmail
 }
 
 type LoginData {

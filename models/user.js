@@ -7,6 +7,13 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: 'This user is already registered'
     },
+    emailVerified: {
+        type: Boolean,
+        required: true,
+    },
+    verificationToken: {
+        type: String,
+    },
     password: {
         type: String,
         required: true
