@@ -29,8 +29,7 @@ export default {
         throw new Error("Incorrect password!");
     }
     const hashedPassword = await bcrypt.hash(args.newPassword, 10);
-    const update = {password: hashedPassword};
-    await user.updateOne(update);
+    await user.updateOne({password: hashedPassword});
     return {
       email: user._doc.email
     }

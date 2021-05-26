@@ -1,23 +1,31 @@
-import mongoose from 'mongoose'
-import autopopulate from 'mongoose-autopopulate'
+import mongoose from "mongoose";
+import autopopulate from "mongoose-autopopulate";
 
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema(
+  {
     email: {
-        type: String,
-        required: true,
-        unique: 'This user is already registered'
+      type: String,
+      required: true,
+      unique: "This user is already registered",
     },
     emailVerified: {
-        type: Boolean,
-        required: true,
-    },
-    verificationToken: {
-        type: String,
+      type: Boolean,
+      required: true,
     },
     password: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
-}, { timestamps: true })
+    verificationToken: {
+      type: String,
+    },
+    actions: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "UserActions",
+      autopopulate: true,
+    },
+  },
+  { timestamps: true }
+);
 
-export default mongoose.model('User', userSchema);
+export default mongoose.model("User", userSchema);
