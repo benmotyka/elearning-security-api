@@ -13,10 +13,9 @@ export const sendConfirmRegistrationEmail = (receiver, verificationToken) => {
   sendgrid
     .send(mail)
     .then(() => {
-      console.log(`Confirm registration email sent to ${receiver}`);
+      console.log(`${new Date().toISOString()} Confirm registration email sent to ${receiver}`);
     })
     .catch((error) => {
-      console.log(process.env.SENDGRID_EMAIL_FROM);
       console.error(error.response.body.errors);
     });
 };
@@ -34,7 +33,7 @@ export const sendForgotPasswordEmail = (receiver, verificationToken) => {
   sendgrid
     .send(mail)
     .then(() => {
-      console.log(`Forgot password email sent to ${receiver}`);
+      console.log(`${new Date().toISOString()} Forgot password email sent to ${receiver}`);
     })
     .catch((error) => {
       console.error(error);

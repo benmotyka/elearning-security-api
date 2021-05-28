@@ -44,8 +44,8 @@ export default {
     if(!user){
         throw new Error("Invalid link!");
     }
-    console.log(`User ${user.email} has just confirmed their account.`)
-    await user.update({ emailVerified: true, verificationToken: "" });
+    console.log(`${new Date().toISOString()} User ${user.email} has just confirmed their account.`)
+    await user.updateOne({ emailVerified: true, verificationToken: "" });
     return {
       email: user._doc.email,
     };
@@ -70,7 +70,7 @@ export default {
       email: user._doc.email,
     };
   },
-  forgotPasswordChanged: async({token, password}) => {
+  forgotPasswordChange: async({token, password}) => {
     const action = await UserActions.findOne({forgotPasswordToken: token})
     if(!action){
       throw new Error("Forgot password link doesn't exist!")
@@ -78,7 +78,7 @@ export default {
     const user = await User.findOne({_id: action.userId})
     const hashedPassword = await bcrypt.hash(password, 10);
     await user.updateOne({password: hashedPassword});
-    await action.updateOne({forgotPasswordToken: ""})
+    await action.deleteOne({forgotPasswordToken: token})
     return {
       email: user._doc.email,
     };
