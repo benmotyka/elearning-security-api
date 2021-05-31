@@ -4,10 +4,15 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import {sendConfirmRegistrationEmail, sendForgotPasswordEmail} from "../../services/email/sendEmail.js";
 import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 export default {
   registerUser: async (args) => {
     try {
+      const captcha = await axios.post(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.CAPTCHA_SECRET}&response=${args.userInput.captchaToken}`)
+      if(!captcha.data.success || captcha.data.score <= 0.3){
+        throw new Error("Coś poszło nie tak. Spróbuj ponownie później.");
+      }
       const hashedPassword = await bcrypt.hash(args.userInput.password, 10);
       let token = uuidv4();
       const user = new User({
@@ -17,7 +22,7 @@ export default {
         password: hashedPassword,
       });
       const result = await user.save();
-      sendConfirmRegistrationEmail(args.userInput.email, token);
+      // sendConfirmRegistrationEmail(args.userInput.email, token);
       return { ...result._doc, password: null, _id: result.id };
     } catch (error) {
       throw error;
@@ -26,11 +31,11 @@ export default {
   loginUser: async ({ email, password }) => {
     const user = await User.findOne({ email: email });
     if (!user || !user.emailVerified) {
-      throw new Error("User doesn't exist!");
+      throw new Error("Użytkownik nie istnieje!");
     }
     const isEqual = await bcrypt.compare(password, user.password);
     if (!isEqual) {
-      throw new Error("Incorrect password!");
+      throw new Error("Błędne hasło!");
     }
     const token = jwt.sign(
       { userId: user.id, email: user.email },
@@ -42,7 +47,7 @@ export default {
   confirmEmail: async ({ token }) => {
     const user = await User.findOne({ verificationToken: token });
     if(!user){
-        throw new Error("Invalid link!");
+        throw new Error("Błędny link!");
     }
     console.log(`${new Date().toISOString()} User ${user.email} has just confirmed their account.`)
     await user.updateOne({ emailVerified: true, verificationToken: "" });
@@ -53,12 +58,12 @@ export default {
   forgotPassword: async ({email}) => {
     const user = await User.findOne({email: email});
     if(!user || !user.emailVerified){
-      throw new Error("Account doesn't exist!")
+      throw new Error("Konto nie istnieje!")
     }
     let token = uuidv4();
     const alreadySent = await UserActions.findOne({userId: user.id})
     if(alreadySent){
-      throw new Error("Forgot password email already sent!")
+      throw new Error("Email ze zmianą hasła został już wysłany!")
     }
     const newAction = new UserActions({
       userId: user.id,
@@ -73,7 +78,7 @@ export default {
   forgotPasswordChange: async({token, password}) => {
     const action = await UserActions.findOne({forgotPasswordToken: token})
     if(!action){
-      throw new Error("Forgot password link doesn't exist!")
+      throw new Error("Link nie istnieje!")
     }
     const user = await User.findOne({_id: action.userId})
     const hashedPassword = await bcrypt.hash(password, 10);

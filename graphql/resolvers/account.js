@@ -9,7 +9,7 @@ export default {
     }
     const user = await User.findById(req.userId);
     if (!user) {
-      throw new Error("User not found.");
+      throw new Error("Nie znaleziono użytkownika!");
     }
     return {
       email: user._doc.email,
@@ -22,11 +22,11 @@ export default {
     }
     const user = await User.findById(req.userId);
     if(!user){
-      throw new Error("User doesn't exist!");
+      throw new Error("Użytkownik nie istnieje!");
     }
     const isEqual = await bcrypt.compare(args.oldPassword, user.password);
     if (!isEqual){
-        throw new Error("Incorrect password!");
+        throw new Error("Błędne hasło!");
     }
     const hashedPassword = await bcrypt.hash(args.newPassword, 10);
     await user.updateOne({password: hashedPassword});

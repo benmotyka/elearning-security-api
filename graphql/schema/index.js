@@ -47,6 +47,7 @@ type User {
 input UserInput {
     email: String!
     password: String!
+    captchaToken: String!
 }
 
 type Module {
