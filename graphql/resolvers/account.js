@@ -1,6 +1,6 @@
 import User from "../../models/user.js";
-import bcrypt from "bcryptjs"
-import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+import validateCaptcha from "../../functions/captcha/validateCaptcha.js";
 
 export default {
   getAccountInfo: async (args, req) => {
@@ -20,18 +20,19 @@ export default {
     if (!req.isAuth) {
       throw new Error("Unauthenticated!");
     }
+    await validateCaptcha(args.captchaToken);
     const user = await User.findById(req.userId);
-    if(!user){
+    if (!user) {
       throw new Error("Użytkownik nie istnieje!");
     }
     const isEqual = await bcrypt.compare(args.oldPassword, user.password);
-    if (!isEqual){
-        throw new Error("Błędne hasło!");
+    if (!isEqual) {
+      throw new Error("Błędne stare hasło");
     }
     const hashedPassword = await bcrypt.hash(args.newPassword, 10);
-    await user.updateOne({password: hashedPassword});
+    await user.updateOne({ password: hashedPassword });
     return {
-      email: user._doc.email
-    }
+      email: user._doc.email,
+    };
   },
 };

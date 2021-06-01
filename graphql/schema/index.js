@@ -10,17 +10,17 @@ schema {
 }
 
 type RootQuery {
-    loginUser(email: String!, password: String!): LoginData
+    loginUser(userInput: UserInput): LoginData
     modules: [Module!]!
     getAccountInfo: AccountData!
 }
 
 type RootMutation {
     registerUser(userInput: UserInput): User
-    resetPassword(oldPassword: String!, newPassword: String!): UserEmail
+    resetPassword(oldPassword: String!, newPassword: String!, captchaToken: String!): UserEmail
     confirmEmail(token: String!): UserEmail
-    forgotPassword(email: String!): UserEmail
-    forgotPasswordChange(token: String!, password: String!): UserEmail
+    forgotPassword(email: String!, captchaToken: String!): UserEmail
+    forgotPasswordChange(token: String!, password: String!, captchaToken: String!): UserEmail
 }
 
 type LoginData {

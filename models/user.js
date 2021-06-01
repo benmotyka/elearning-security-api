@@ -16,9 +16,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    verificationToken: {
-      type: String,
-    },
     actions: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "UserActions",
