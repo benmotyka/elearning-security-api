@@ -18,4 +18,7 @@ const userActionsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+userActionsSchema.plugin(autopopulate);
+
+
 export default mongoose.model("UserActions", userActionsSchema);

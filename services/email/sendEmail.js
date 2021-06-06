@@ -7,7 +7,7 @@ export const sendConfirmRegistrationEmail = (receiver, verificationToken) => {
     to: receiver,
     from: process.env.SENDGRID_EMAIL_FROM,
     subject: "Confirm your registration",
-    html: `<br>Hello,<br><br>Thank you for registering at our site. <br><br>Please confirm your registration at: http://localhost:3000/registration/confirm/${verificationToken} <br><br>Best regards,<br>Team`,
+    html: `<br>Hello,<br><br>Thank you for registering at our site. <br><br>Please confirm your registration at: ${WEBSITE_URL}/registration/confirm/${verificationToken} <br><br>Best regards,<br>Team`,
   };
 
   sendgrid
@@ -27,7 +27,7 @@ export const sendForgotPasswordEmail = (receiver, verificationToken) => {
     to: receiver,
     from: process.env.SENDGRID_EMAIL_FROM,
     subject: "Reset your password",
-    html: `<br>Hello,<br><br>In order to reset your password, visit: http://localhost:3000/forgot-password/${verificationToken} <br><br>Best regards,<br>Team`,
+    html: `<br>Hello,<br><br>In order to reset your password, visit: ${WEBSITE_URL}/forgot-password/${verificationToken} <br><br>Best regards,<br>Team`,
   };
 
   sendgrid

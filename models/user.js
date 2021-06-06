@@ -21,8 +21,22 @@ const userSchema = new mongoose.Schema(
       ref: "UserActions",
       autopopulate: true,
     },
+    coursesStarted: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Course",
+      autopopulate: true,
+    }],
+    coursesFinished: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Course",
+      autopopulate: true,
+    }],
+
   },
   { timestamps: true }
 );
+
+
+userSchema.plugin(autopopulate);
 
 export default mongoose.model("User", userSchema);

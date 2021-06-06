@@ -1,14 +1,12 @@
 import express from "express";
-import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import pkg from 'express-graphql';
+import pkg from "express-graphql";
 const { graphqlHTTP } = pkg;
-
-import graphqlSchema from "./graphql/schema/index.js"
-import graphqlResolvers from "./graphql/resolvers/index.js"
+import connectDatabase from "./config/database.js";
+import graphqlSchema from "./graphql/schema/index.js";
+import graphqlResolvers from "./graphql/resolvers/index.js";
 import verifyToken from "./middleware/verifyToken.js";
-
 dotenv.config();
 const app = express();
 
@@ -36,10 +34,7 @@ app.use(
 
 const port = process.env.PORT || 3000;
 
-mongoose
-  .connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.rye0p.mongodb.net/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority`
-  )
+connectDatabase()
   .then(() => {
     app.listen(port, () => {
       console.log("Api listening on port: " + port);

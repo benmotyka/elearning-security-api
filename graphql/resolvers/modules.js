@@ -1,12 +1,12 @@
-import module from "../../models/module";
+import course from "../../models/course";
 import jwt from "jsonwebtoken";
 
 export default {
-  modules: async (args, req) => {
+  courses: async (args, req) => {
     try {
-      return modules.map(() => {
+      return course.map(() => {
         return {
-          ...module._doc,
+          ...course._doc,
         };
       });
     } catch (error) {

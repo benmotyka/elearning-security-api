@@ -11,7 +11,7 @@ schema {
 
 type RootQuery {
     loginUser(userInput: UserInput): LoginData
-    modules: [Module!]!
+    courses: [Course!]!
     getAccountInfo: AccountData!
 }
 
@@ -50,11 +50,7 @@ input UserInput {
     captchaToken: String!
 }
 
-type Module {
+type Course {
     _id: ID!
-    index: Float!
-    title: String!
-    description: String!
-    difficulty: Float!
 }
 `)
