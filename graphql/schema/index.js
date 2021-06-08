@@ -11,7 +11,7 @@ schema {
 
 type RootQuery {
     loginUser(userInput: UserInput): LoginData
-    courses: [Course!]!
+    coursesPreview: [Course!]!
     getAccountInfo: AccountData!
 }
 
@@ -52,5 +52,11 @@ input UserInput {
 
 type Course {
     _id: ID!
+    title: String!
+    brief: String!
+    description: String!
+    link: String!
+    difficulty: Int!
+    rating: Int
 }
 `)

@@ -5,6 +5,7 @@ const courseSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
+    unique: "This course is already registered",
   },
   brief: {
     type: String,
@@ -17,6 +18,7 @@ const courseSchema = new mongoose.Schema({
   link: {
     type: String,
     required: true,
+    unique: "This course is already registered",
   },
   difficulty: {
     type: Number,
