@@ -21,12 +21,17 @@ type RootMutation {
     confirmEmail(token: String!): UserEmail
     forgotPassword(email: String!, captchaToken: String!): UserEmail
     forgotPasswordChange(token: String!, password: String!, captchaToken: String!): UserEmail
+    updateUserCourses(courseName: String!): CourseID
 }
 
 type LoginData {
     userId: ID!
     token: String!
     tokenExpiration: Int!
+}
+
+type CourseID {
+    _id: ID!
 }
 
 type AccountData {
