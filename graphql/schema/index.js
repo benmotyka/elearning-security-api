@@ -13,15 +13,20 @@ type RootQuery {
     loginUser(userInput: UserInput): LoginData
     coursesPreview: [Course!]!
     getAccountInfo: AccountData!
+    checkIfCourseFinished(courseName: String!): Course
 }
 
 type RootMutation {
-    registerUser(userInput: UserInput): User
+registerUser(userInput: UserInput): User
     resetPassword(oldPassword: String!, newPassword: String!, captchaToken: String!): UserEmail
     confirmEmail(token: String!): UserEmail
     forgotPassword(email: String!, captchaToken: String!): UserEmail
     forgotPasswordChange(token: String!, password: String!, captchaToken: String!): UserEmail
-    updateUserCourses(courseName: String!): CourseID
+    updateUserCourses(courseName: String!): Course
+}
+
+type CourseLink {
+    link: String
 }
 
 type LoginData {
