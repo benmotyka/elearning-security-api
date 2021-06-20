@@ -1,6 +1,5 @@
-import pkg from 'graphql';
-const {buildSchema} = pkg;
-
+import pkg from "graphql";
+const { buildSchema } = pkg;
 
 export default buildSchema(`
 
@@ -14,10 +13,11 @@ type RootQuery {
     coursesPreview: [Course!]!
     getAccountInfo: AccountData!
     checkIfCourseFinished(courseName: String!): Course
+    getQuizQuestions(courseName: String!):  QuizQuestion
 }
 
 type RootMutation {
-registerUser(userInput: UserInput): User
+    registerUser(userInput: UserInput): User
     resetPassword(oldPassword: String!, newPassword: String!, captchaToken: String!): UserEmail
     confirmEmail(token: String!): UserEmail
     forgotPassword(email: String!, captchaToken: String!): UserEmail
@@ -69,4 +69,12 @@ type Course {
     difficulty: Int!
     rating: Int
 }
-`)
+
+type QuizQuestion {
+    _id: ID!
+    course: ID!
+    question: String!
+    answers: [String!]!
+    correctAnswerIndex: Int
+}
+`);

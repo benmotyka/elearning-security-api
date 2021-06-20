@@ -7,6 +7,10 @@ import connectDatabase from "./config/database.js";
 import graphqlSchema from "./graphql/schema/index.js";
 import graphqlResolvers from "./graphql/resolvers/index.js";
 import verifyToken from "./middleware/verifyToken.js";
+
+import seedCourses from "./seeders/courses/courses.js"
+import seedQuizQuestions from "./seeders/quizQuestions/quizQuestions.js"
+
 dotenv.config();
 const app = express();
 
@@ -31,6 +35,11 @@ app.use(
     graphiql: true,
   })
 );
+
+process.argv.map(arg => {
+  if (arg === "seedCourses") seedCourses(); 
+  if (arg === "seedQuizQuestions") seedQuizQuestions();
+})
 
 const port = process.env.PORT || 3000;
 
