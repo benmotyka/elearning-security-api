@@ -13,7 +13,7 @@ type RootQuery {
     coursesPreview: [Course!]!
     getAccountInfo: AccountData!
     checkIfCourseFinished(courseName: String!): Course
-    getQuizQuestions(courseName: String!):  QuizQuestion
+    getQuizQuestions(courseName: String!):  [QuizQuestion!]!
 }
 
 type RootMutation {
