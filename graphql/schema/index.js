@@ -23,6 +23,7 @@ type RootMutation {
     forgotPassword(email: String!, captchaToken: String!): UserEmail
     forgotPasswordChange(token: String!, password: String!, captchaToken: String!): UserEmail
     updateUserCourses(courseName: String!): Course
+    finishQuiz(courseName: String!, userAnswers: String!): QuizScore
 }
 
 type CourseLink {
@@ -46,6 +47,11 @@ type AccountData {
 
 type UserEmail { 
     email: String!
+}
+
+type QuizScore {
+    correctAnswers: Int!
+    numberOfQuestions: Int!
 }
 
 type User {
