@@ -10,10 +10,12 @@ import verifyToken from "./middleware/verifyToken.js";
 
 import seedCourses from "./seeders/courses/courses.js"
 import seedQuizQuestions from "./seeders/quizQuestions/quizQuestions.js"
+import cors from "cors"
 
 dotenv.config();
 const app = express();
 
+app.use(cors())
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
