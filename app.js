@@ -15,15 +15,19 @@ import cors from "cors"
 dotenv.config();
 const app = express();
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+app.use(cors());
 
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "http://localhost:3001");
+//   res.header("Access-Control-Allow-Origin", "staysecure.pl");
+//   res.header("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
+//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+//   if (req.method === "OPTIONS") {
+//     return res.sendStatus(200);
+//   }
+//   next();
+// });
 
 app.use(bodyParser.json());
 app.use(verifyToken);
