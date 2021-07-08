@@ -19,7 +19,7 @@ app.use(cors({origin: 'https://staysecure.pl'}));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://staysecure.pl");
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
   res.setHeader("Access-Control-Allow-Origin", "http://staysecure.pl");
   res.setHeader("Access-Control-Allow-Origin", "staysecure.pl");
