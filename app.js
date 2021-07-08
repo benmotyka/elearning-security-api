@@ -15,20 +15,12 @@ import cors from "cors"
 dotenv.config();
 const app = express();
 
-const whitelist = [
-  'https://staysecure.pl',
-];
-const corsOptions = {
-  origin: function(origin, callback){
-      const originIsWhitelisted = whitelist.indexOf(origin) !== -1;
-      callback(null, originIsWhitelisted);
-  },
-  credentials: true
-};
-app.use(cors(corsOptions));
+app.use(cors({origin: 'https://staysecure.pl'}));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://staysecure.pl");
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
   res.setHeader("Access-Control-Allow-Origin", "http://staysecure.pl");
   res.setHeader("Access-Control-Allow-Origin", "staysecure.pl");
   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
