@@ -17,6 +17,7 @@ const app = express();
 
 // app.use(cors({origin: 'https://staysecure.pl'}));
 app.use(cors())
+app.options("*", cors());
 
 // app.use((req, res, next) => {
 //   res.setHeader("Access-Control-Allow-Origin", "https://staysecure.pl");
