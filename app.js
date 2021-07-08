@@ -28,7 +28,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "https://staysecure.pl");
+  res.setHeader("Access-Control-Allow-Origin", "http://staysecure.pl");
+  res.setHeader("Access-Control-Allow-Origin", "staysecure.pl");
   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   if (req.method === "OPTIONS") {
