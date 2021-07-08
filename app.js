@@ -15,21 +15,22 @@ import cors from "cors"
 dotenv.config();
 const app = express();
 
-app.use(cors({origin: 'https://staysecure.pl'}));
+// app.use(cors({origin: 'https://staysecure.pl'}));
+app.use(cors())
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://staysecure.pl");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "https://staysecure.pl");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
-  res.setHeader("Access-Control-Allow-Origin", "http://staysecure.pl");
-  res.setHeader("Access-Control-Allow-Origin", "staysecure.pl");
-  res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
-  next();
-});
+//   res.setHeader("Access-Control-Allow-Origin", "http://staysecure.pl");
+//   res.setHeader("Access-Control-Allow-Origin", "staysecure.pl");
+//   res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//   if (req.method === "OPTIONS") {
+//     return res.sendStatus(200);
+//   }
+//   next();
+// });
 
 app.use(bodyParser.json());
 app.use(verifyToken);
