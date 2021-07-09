@@ -11,7 +11,7 @@ import verifyToken from "./middleware/verifyToken.js";
 import seedCourses from "./seeders/courses/courses.js"
 import seedQuizQuestions from "./seeders/quizQuestions/quizQuestions.js"
 import cors from "cors"
-
+import http from "http"
 dotenv.config();
 const app = express();
 
@@ -50,7 +50,7 @@ const port = process.env.PORT || 3000;
 
 connectDatabase()
   .then(() => {
-    app.listen(port, () => {
+    http.createServer(app).listen(port, () => {
       console.log("Api listening on port: " + port);
     });
   })
