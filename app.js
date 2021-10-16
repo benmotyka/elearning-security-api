@@ -12,6 +12,7 @@ import seedCourses from "./seeders/courses/courses.js"
 import seedQuizQuestions from "./seeders/quizQuestions/quizQuestions.js"
 import cors from "cors"
 import http from "http"
+import seedArticles from "./seeders/articles/articles.js";
 dotenv.config();
 const app = express();
 
@@ -43,6 +44,7 @@ app.use(
 
 process.argv.map(arg => {
   if (arg === "seedCourses") seedCourses(); 
+  if (arg === "seedArticles") seedArticles();
   if (arg === "seedQuizQuestions") seedQuizQuestions();
 })
 

@@ -2,14 +2,10 @@ import mongoose from "mongoose";
 import autopopulate from "mongoose-autopopulate";
 
 const courseSchema = new mongoose.Schema({
-  title: {
+  header: {
     type: String,
     required: true,
-    unique: "This course is already registered",
-  },
-  brief: {
-    type: String,
-    required: true,
+    unique: "course-exists",
   },
   description: {
     type: String,
@@ -17,20 +13,20 @@ const courseSchema = new mongoose.Schema({
   },
   link: {
     type: String,
+    unique: "course-exists",
     required: true,
-    unique: "This course is already registered",
   },
-  difficulty: {
-    type: Number,
-    required: true,
-    min: 1,
-    max: 3,
-  },
-  rating: {
-    type: Number,
-    min: 0,
-    max: 5,
-  },
+  // difficulty: {
+  //   type: Number,
+  //   required: true,
+  //   min: 1,
+  //   max: 3,
+  // },
+  // rating: {
+  //   type: Number,
+  //   min: 0,
+  //   max: 5,
+  // },
   // comments: [
   //   {
   //     type: mongoose.Schema.Types.ObjectId,

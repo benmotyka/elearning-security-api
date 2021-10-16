@@ -7,13 +7,11 @@ const seedCourses = () => {
   coursesData.map(async (course) => {
     try {
       const newCourse = await new Course({
-        title: course.title,
-        brief: course.brief,
+        header: course.header,
         description: course.description,
         link: course.link,
-        difficulty: course.difficulty,
       }).save();
-      console.log(`${newCourse.title} course added!`);
+      console.log(`${newCourse.header} course added!`);
     } catch (error) {
       console.log(error);
     }

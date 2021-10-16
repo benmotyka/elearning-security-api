@@ -1,44 +1,32 @@
 export const coursesData = [
     {
-        title: "Phishing",
-        brief: "Jak skutecznie radzić sobie z wyłudzeniem danych?",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nisl mollis ante suscipit tincidunt. Sed pretium quam eu tellus facilisis gravida. Ut est arcu, pretium id elit sit amet, aliquam molestie ipsum. In id lacus posuere, dictum leo ac, posuere ligula. In lobortis, magna a imperdiet auctor, quam felis pellentesque felis, non cursus leo leo at elit. In ipsum tellus, faucibus nec dui a, porta placerat libero. In libero dolor, ultricies in mattis quis, placerat eget sapien.",
+        header: "Phishing",
+        description: "Jak skutecznie radzić sobie z wyłudzeniem danych?",
         link: "phishing",
-        difficulty: 2
     },
     {
-        title: "Ransomware",
-        brief: "Czym tak naprawdę jest ransomware i dlaczego jest takie groźne?",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nisl mollis ante suscipit tincidunt. Sed pretium quam eu tellus facilisis gravida. Ut est arcu, pretium id elit sit amet, aliquam molestie ipsum. In id lacus posuere, dictum leo ac, posuere ligula. In lobortis, magna a imperdiet auctor, quam felis pellentesque felis, non cursus leo leo at elit. In ipsum tellus, faucibus nec dui a, porta placerat libero. In libero dolor, ultricies in mattis quis, placerat eget sapien.",
+        header: "Ransomware",
+        description: "Czym tak naprawdę jest ransomware i dlaczego jest takie groźne?",
         link: "ransomware",
-        difficulty: 2
     },
     {
-        title: "Spoofing",
-        brief: "Zagrożenie podszywania się pod wizerunek firmy",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nisl mollis ante suscipit tincidunt. Sed pretium quam eu tellus facilisis gravida. Ut est arcu, pretium id elit sit amet, aliquam molestie ipsum. In id lacus posuere, dictum leo ac, posuere ligula. In lobortis, magna a imperdiet auctor, quam felis pellentesque felis, non cursus leo leo at elit. In ipsum tellus, faucibus nec dui a, porta placerat libero. In libero dolor, ultricies in mattis quis, placerat eget sapien.",
+        header: "Spoofing",
+        description: "Zagrożenie podszywania się pod wizerunek firmy",
         link: "spoofing",
-        difficulty: 1
     },
     {
-        title: "Social engineering",
-        brief: "Czyli jak w łatwy sposób paść ofiarą oszusta",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nisl mollis ante suscipit tincidunt. Sed pretium quam eu tellus facilisis gravida. Ut est arcu, pretium id elit sit amet, aliquam molestie ipsum. In id lacus posuere, dictum leo ac, posuere ligula. In lobortis, magna a imperdiet auctor, quam felis pellentesque felis, non cursus leo leo at elit. In ipsum tellus, faucibus nec dui a, porta placerat libero. In libero dolor, ultricies in mattis quis, placerat eget sapien.",
+        header: "Social engineering",
+        description: "Czyli jak w łatwy sposób paść ofiarą oszusta",
         link: "social-engineering",
-        difficulty: 1
     },
     {
-        title: "SQL Injection",
-        brief: "Dlaczego tak istotne jest dobrze wykonane oprogramowanie?",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nisl mollis ante suscipit tincidunt. Sed pretium quam eu tellus facilisis gravida. Ut est arcu, pretium id elit sit amet, aliquam molestie ipsum. In id lacus posuere, dictum leo ac, posuere ligula. In lobortis, magna a imperdiet auctor, quam felis pellentesque felis, non cursus leo leo at elit. In ipsum tellus, faucibus nec dui a, porta placerat libero. In libero dolor, ultricies in mattis quis, placerat eget sapien.",
+        header: "SQL Injection",
+        description: "Dlaczego tak istotne jest dobrze wykonane oprogramowanie?",
         link: "sql-injection",
-        difficulty: 3
     },
     {
-        title: "Denial Of Service",
-        brief: "Potencjalne skutki sztucznego obciążenia serwisu internetowego",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nisl mollis ante suscipit tincidunt. Sed pretium quam eu tellus facilisis gravida. Ut est arcu, pretium id elit sit amet, aliquam molestie ipsum. In id lacus posuere, dictum leo ac, posuere ligula. In lobortis, magna a imperdiet auctor, quam felis pellentesque felis, non cursus leo leo at elit. In ipsum tellus, faucibus nec dui a, porta placerat libero. In libero dolor, ultricies in mattis quis, placerat eget sapien.",
+        header: "Denial Of Service",
+        description: "Potencjalne skutki sztucznego obciążenia serwisu internetowego",
         link: "dos",
-        difficulty: 3
     }
 ]

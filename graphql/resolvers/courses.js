@@ -2,6 +2,12 @@ import Course from "../../models/course.js";
 import User from "../../models/user.js";
 
 export default {
+  courses: async (args) => {
+    const courses = await Course.find();
+    const response = courses.map(course => ({...course._doc}));
+    if (args.quantity) return response.slice(0, args.quantity)
+    return response
+},
   coursesPreview: async () => {
     const courses = await Course.find();
     return courses.map((course) => ({

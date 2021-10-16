@@ -11,6 +11,9 @@ schema {
 type RootQuery {
     loginUser(userInput: UserInput): LoginData
     coursesPreview: [Course!]!
+    article(link: String!): Article!
+    articles(quantity: Int, random: Boolean): [Article!]!
+    courses(quantity: Int): [Course!]!
     getAccountInfo: AccountData!
     checkIfCourseFinished(courseName: String!): Course
     getQuizQuestions(courseName: String!):  [QuizQuestion!]!
@@ -68,12 +71,16 @@ input UserInput {
 
 type Course {
     _id: ID!
-    title: String!
-    brief: String!
+    header: String!
     description: String!
     link: String!
-    difficulty: Int!
-    rating: Int
+}
+
+type Article {
+    _id: ID!
+    header: String!
+    description: String!
+    link: String!
 }
 
 type QuizQuestion {
