@@ -10,16 +10,49 @@ import { v4 as uuidv4 } from "uuid";
 import validateCaptcha from "../../functions/captcha/validateCaptcha.js";
 
 export default {
-  registerUser: async (args) => {
+  login: async (args) => {
     await validateCaptcha(args.userInput.captchaToken);
-    const isDuplicate = await User.findOne({ email: args.userInput.email });
-    if (isDuplicate) {
-      throw new Error("Użytkownik istnieje");
+
+    const TOKEN_EXP = 6000;
+    const user = await User.findOne({ email: args.userInput.email });
+
+    if (!user || !user.emailVerified) {
+      throw new Error("invalid-user-or-password");
     }
-    const hashedPassword = await bcrypt.hash(args.userInput.password, 10);
+    const isEqual = await bcrypt.compare(
+      args.userInput.password,
+      user.password
+    );
+    if (!isEqual) {
+      throw new Error("invalid-user-or-password");
+    }
+
+    if (args.userInput.rememberMe) {
+      const token = jwt.sign(
+        { userId: user.id, email: user.email },
+        process.env.JWT_SECRET
+      );
+    return { userId: user.id, name: user.name, token: token };
+    } else {
+      const token = jwt.sign(
+        { userId: user.id, email: user.email },
+        process.env.JWT_SECRET,
+        { expiresIn: TOKEN_EXP }
+      );
+    return { userId: user.id, name: user.name, token: token, tokenExpiration: TOKEN_EXP };
+    }
+  },
+  register: async (args) => {
+    await validateCaptcha(args.captchaToken);
+    const isDuplicate = await User.findOne({ email: args.email });
+    if (isDuplicate) {
+      throw new Error("user-exists");
+    }
+    const hashedPassword = await bcrypt.hash(args.password, 10);
     let token = uuidv4();
     const user = new User({
-      email: args.userInput.email,
+      email: args.email,
+      name: args.name,
       emailVerified: false,
       password: hashedPassword,
     });
@@ -29,33 +62,13 @@ export default {
       verificationToken: token,
     });
     await newAction.save();
-    sendConfirmRegistrationEmail(args.userInput.email, token);
-    return { ...result._doc, password: null, _id: result.id };
-  },
-  loginUser: async (args) => {
-    await validateCaptcha(args.userInput.captchaToken);
-    const user = await User.findOne({ email: args.userInput.email });
-    if (!user || !user.emailVerified) {
-      throw new Error("Błędny email lub hasło");
-    }
-    const isEqual = await bcrypt.compare(
-      args.userInput.password,
-      user.password
-    );
-    if (!isEqual) {
-      throw new Error("Błędny email lub hasło");
-    }
-    const token = jwt.sign(
-      { userId: user.id, email: user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: 600 }
-    );
-    return { userId: user.id, token: token, tokenExpiration: 600 };
+    sendConfirmRegistrationEmail(args.email, token);
+    return {email: result.email};
   },
   confirmEmail: async ({ token }) => {
     const action = await UserActions.findOne({ verificationToken: token });
     if (!action) {
-      throw new Error("Błędny link");
+      throw new Error("action-doesnt-exist");
     }
     const user = await User.findOne({ _id: action.userId });
     console.log(

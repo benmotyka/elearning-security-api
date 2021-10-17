@@ -8,12 +8,6 @@ export default {
     if (args.quantity) return response.slice(0, args.quantity)
     return response
 },
-  coursesPreview: async () => {
-    const courses = await Course.find();
-    return courses.map((course) => ({
-      ...course._doc,
-    }));
-  },
   updateUserCourses: async (args, req) => {
     if (!req.isAuth) {
       throw new Error("Unauthenticated!");

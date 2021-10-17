@@ -9,26 +9,30 @@ schema {
 }
 
 type RootQuery {
-    loginUser(userInput: UserInput): LoginData
-    coursesPreview: [Course!]!
+    login(userInput: UserInput): LoginData
     article(link: String!): Article!
     articles(quantity: Int, random: Boolean): [Article!]!
     courses(quantity: Int): [Course!]!
+
     getAccountInfo: AccountData!
     checkIfCourseFinished(courseName: String!): Course
     getQuizQuestions(courseName: String!):  [QuizQuestion!]!
 }
 
 type RootMutation {
-    registerUser(userInput: UserInput): User
-    resetPassword(oldPassword: String!, newPassword: String!, captchaToken: String!): UserEmail
-    confirmEmail(token: String!): UserEmail
-    forgotPassword(email: String!, captchaToken: String!): UserEmail
-    forgotPasswordChange(token: String!, password: String!, captchaToken: String!): UserEmail
+    register(email: String!, name: String!, password: String!, captchaToken: String!): Email
+    confirmEmail(token: String!): Email
+
+    resetPassword(oldPassword: String!, newPassword: String!, captchaToken: String!): Email
+    forgotPassword(email: String!, captchaToken: String!): Email
+    forgotPasswordChange(token: String!, password: String!, captchaToken: String!): Email
     updateUserCourses(courseName: String!): Course
     finishQuiz(courseName: String!, userAnswers: String!): QuizScore
 }
 
+type Id {
+    _id: ID!
+}
 type CourseLink {
     link: String
 }
@@ -36,7 +40,8 @@ type CourseLink {
 type LoginData {
     userId: ID!
     token: String!
-    tokenExpiration: Int!
+    tokenExpiration: Int
+    name: String
 }
 
 type CourseID {
@@ -48,7 +53,7 @@ type AccountData {
     createdAt: String!
 }
 
-type UserEmail { 
+type Email { 
     email: String!
 }
 
@@ -67,6 +72,7 @@ input UserInput {
     email: String!
     password: String!
     captchaToken: String!
+    rememberMe: Boolean!
 }
 
 type Course {
