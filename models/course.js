@@ -16,6 +16,12 @@ const courseSchema = new mongoose.Schema({
     unique: "course-exists",
     required: true,
   },
+  difficulty: {
+    type: Number,
+    required: true,
+    min: 1,
+    max: 3
+  }
   // difficulty: {
   //   type: Number,
   //   required: true,

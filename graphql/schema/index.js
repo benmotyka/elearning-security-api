@@ -14,7 +14,6 @@ type RootQuery {
     articles(quantity: Int, random: Boolean): [Article!]!
     courses(quantity: Int): [Course!]!
 
-    getAccountInfo: AccountData!
     checkIfCourseFinished(courseName: String!): Course
     getQuizQuestions(courseName: String!):  [QuizQuestion!]!
 }
@@ -22,8 +21,8 @@ type RootQuery {
 type RootMutation {
     register(email: String!, name: String!, password: String!, captchaToken: String!): Email
     confirmEmail(token: String!): Email
-
     resetPassword(oldPassword: String!, newPassword: String!, captchaToken: String!): Email
+
     forgotPassword(email: String!, captchaToken: String!): Email
     forgotPasswordChange(token: String!, password: String!, captchaToken: String!): Email
     updateUserCourses(courseName: String!): Course
@@ -80,6 +79,7 @@ type Course {
     header: String!
     description: String!
     link: String!
+    difficulty: Int!
 }
 
 type Article {

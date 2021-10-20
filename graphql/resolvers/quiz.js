@@ -21,12 +21,16 @@ export default {
     const course = await Course.findOne({link: args.courseName})
     const quizQuestions = await QuizQuestion.find({course: course._id})
     const userAnswers = JSON.parse(args.userAnswers);
-    console.log(userAnswers);
-    console.log(quizQuestions);
+    let userScore = 0;
+    let correct = false;
     userAnswers.map(answer => {
       quizQuestions.map(question => {
+        if(toString(answer.question) === toString(question._id)) {
+          if(answer.answer === question.correctAnswerIndex) correct = true;
+        }
       })
+      if(correct) userScore += 1;
     })
-
+    return { correctAnswers: userScore, numberOfQuestions: quizQuestions.length};
   }
 };
