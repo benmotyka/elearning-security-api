@@ -86,12 +86,12 @@ export default {
     await validateCaptcha(captchaToken);
     const user = await User.findOne({ email: email });
     if (!user || !user.emailVerified) {
-      throw new Error("Konto nie istnieje");
+      throw new Error("user-not-found");
     }
     let token = uuidv4();
     const alreadySent = await UserActions.findOne({ userId: user.id });
     if (alreadySent) {
-      throw new Error("Email ze zmianą hasła został już wysłany");
+      throw new Error("email-sent-already");
     }
     const newAction = new UserActions({
       userId: user.id,
@@ -107,7 +107,7 @@ export default {
     await validateCaptcha(captchaToken);
     const action = await UserActions.findOne({ forgotPasswordToken: token });
     if (!action) {
-      throw new Error("Link nie istnieje");
+      throw new Error("link-doesnt-exist");
     }
     const user = await User.findOne({ _id: action.userId });
     const hashedPassword = await bcrypt.hash(password, 10);

@@ -5,18 +5,18 @@ import User from "../../models/user.js";
 export default {
   getQuizQuestions: async (args, req) => {
     if (!req.isAuth) {
-      throw new Error("Unauthenticated!");
+      throw new Error("unauthenticated");
     }
     const course = await Course.findOne({ link: args.courseName });
     return await QuizQuestion.find({ course: course._id });
   },
   finishQuiz: async (args, req) => {
     if (!req.isAuth) {
-      throw new Error("Unauthenticated!");
+      throw new Error("unauthenticated");
     }
     const user = await User.findById(req.userId);
     if (!user) {
-      throw new Error("Użytkownik nie istnieje!");
+      throw new Error("user-not-found");
     }
     const course = await Course.findOne({link: args.courseName})
     const quizQuestions = await QuizQuestion.find({course: course._id})

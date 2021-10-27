@@ -10,15 +10,15 @@ export default {
 },
   updateUserCourses: async (args, req) => {
     if (!req.isAuth) {
-      throw new Error("Unauthenticated!");
+      throw new Error("unauthenticated");
     }
     const user = await User.findById(req.userId);
     if (!user) {
-      throw new Error("Nie znaleziono użytkownika.");
+      throw new Error("user-not-found");
     }
     const course = await Course.findOne({ title: args.courseName });
     if (!course) {
-      throw new Error("Nie znaleziono kursu.");
+      throw new Error("course-not-found");
     }
     if (
       !user.coursesFinished.some(
@@ -33,15 +33,15 @@ export default {
   },
   checkIfCourseFinished: async (args, req) => {
     if (!req.isAuth) {
-      throw new Error("Unauthenticated!");
+      throw new Error("unauthenticated");
     }
     const user = await User.findById(req.userId);
     if (!user) {
-      throw new Error("Nie znaleziono użytkownika.");
+      throw new Error("user-not-found");
     }
     const course = await Course.findOne({ link: args.courseName });
     if (!course) {
-      throw new Error("Course not found");
+      throw new Error("course-not-found");
     }
     if (
       !user.coursesFinished.some(
@@ -49,7 +49,7 @@ export default {
           alreadyFinished._id.toString() === course._id.toString()
       )
     ) {
-      throw new Error("Course not finished");
+      throw new Error("course-not-finished");
     }
     return (course._doc);
   },
