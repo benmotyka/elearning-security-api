@@ -19,10 +19,10 @@ type RootQuery {
 }
 
 type RootMutation {
-    register(email: String!, name: String!, password: String!, captchaToken: String!): Email
+    register(email: String!, name: String!, password: String!, captchaToken: String!, accountLevel: String!): Email
     confirmEmail(token: String!): Email
     resetPassword(oldPassword: String!, newPassword: String!, captchaToken: String!): Email
-
+    changeAccountLevel(newAccountLevel: String!): AccountLevel!
     forgotPassword(email: String!, captchaToken: String!): Email
     forgotPasswordChange(token: String!, password: String!, captchaToken: String!): Email
     updateUserCourses(courseName: String!): Course
@@ -41,6 +41,7 @@ type LoginData {
     token: String!
     tokenExpiration: Int
     name: String
+    accountLevel: String!
 }
 
 type CourseID {
@@ -95,5 +96,9 @@ type QuizQuestion {
     question: String!
     answers: [String!]!
     correctAnswerIndex: Int
+}
+
+type AccountLevel {
+    accountLevel: String
 }
 `);

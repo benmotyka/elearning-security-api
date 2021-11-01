@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema(
       ref: "UserActions",
       autopopulate: true,
     },
+    accountLevel: {
+      type: String,
+      required: true,
+    },
     coursesFinished: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Course",

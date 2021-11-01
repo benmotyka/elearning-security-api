@@ -32,14 +32,14 @@ export default {
         { userId: user.id, email: user.email },
         process.env.JWT_SECRET
       );
-    return { userId: user.id, name: user.name, token: token };
+    return { userId: user.id, name: user.name, token: token, accountLevel: user.accountLevel };
     } else {
       const token = jwt.sign(
         { userId: user.id, email: user.email },
         process.env.JWT_SECRET,
         { expiresIn: TOKEN_EXP }
       );
-    return { userId: user.id, name: user.name, token: token, tokenExpiration: TOKEN_EXP };
+    return { userId: user.id, name: user.name, token: token, tokenExpiration: TOKEN_EXP, accountLevel: user.accountLevel };
     }
   },
   register: async (args) => {
@@ -55,6 +55,7 @@ export default {
       name: args.name,
       emailVerified: false,
       password: hashedPassword,
+      accountLevel: args.accountLevel
     });
     const result = await user.save();
     const newAction = new UserActions({

@@ -22,4 +22,17 @@ export default {
       email: user._doc.email,
     };
   },
+  changeAccountLevel: async (args, req) => {
+    if (!req.isAuth) {
+      throw new Error("unauthenticated");
+    }
+    const user = await User.findById(req.userId);
+    if (!user) {
+      throw new Error("user-doesnt-exist");
+    }
+    await user.updateOne({ accountLevel: args.newAccountLevel });
+    return {
+      accountLevel: args.newAccountLevel 
+    };
+  }
 };
