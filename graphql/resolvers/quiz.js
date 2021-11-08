@@ -7,7 +7,7 @@ export default {
     if (!req.isAuth) {
       throw new Error("unauthenticated");
     }
-    const course = await Course.findOne({ link: args.courseName });
+    const course = await Course.findOne({ link: args.courseLink });
     return await QuizQuestion.find({ course: course._id });
   },
   finishQuiz: async (args, req) => {

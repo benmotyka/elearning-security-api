@@ -7,7 +7,7 @@ const seedQuizQuestions = () => {
   console.log("Seeding quiz questions!")
   quizQuestionsData.map(async (quizQuestion) => {
     try {
-      const course = await Course.findOne({ title: quizQuestion.courseTitle });
+      const course = await Course.findOne({ header: quizQuestion.courseTitle });
       const newQuizQuestion = await new QuizQuestion({
           course: course._id,
           question: quizQuestion.question,

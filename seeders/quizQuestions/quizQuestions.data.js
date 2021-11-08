@@ -39,4 +39,12 @@ export const quizQuestionsData = [
         ],
         correctAnswerIndex: 3
     },
+    {
+        courseTitle: "Ransomware",
+        question: "Question dla ransomware",
+        answers: [
+            "Odpowiedz 5", "Odpowiedz 6", " Odpowiedz 7", "Odpowiedz 8"
+        ],
+        correctAnswerIndex: 3
+    },
 ]

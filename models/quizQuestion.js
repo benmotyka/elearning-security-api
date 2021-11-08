@@ -5,6 +5,7 @@ const quizQuestionSchema = new mongoose.Schema({
     course: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
+        ref: "Course",
         autopopulate: true,
     },
     question: {

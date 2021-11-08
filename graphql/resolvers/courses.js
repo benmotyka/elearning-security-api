@@ -8,7 +8,7 @@ export default {
     if (args.quantity) return response.slice(0, args.quantity)
     return response
 },
-  updateUserCourses: async (args, req) => {
+addCourseToFinished: async (args, req) => {
     if (!req.isAuth) {
       throw new Error("unauthenticated");
     }
@@ -16,7 +16,7 @@ export default {
     if (!user) {
       throw new Error("user-not-found");
     }
-    const course = await Course.findOne({ title: args.courseName });
+    const course = await Course.findOne({ link: args.courseName });
     if (!course) {
       throw new Error("course-not-found");
     }
