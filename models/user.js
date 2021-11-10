@@ -34,6 +34,11 @@ const userSchema = new mongoose.Schema(
       ref: "Course",
       autopopulate: true,
     }],
+    coursesStarted: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Course",
+      autopopulate: true,
+    }],
   },
   { timestamps: true }
 );

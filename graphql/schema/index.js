@@ -13,7 +13,7 @@ type RootQuery {
     article(link: String!): Article!
     articles(quantity: Int, random: Boolean): [Article!]!
     courses(quantity: Int): [Course!]!
-
+    getUserInfo: User!
     checkIfCourseFinished(courseName: String!): Course
     getQuizQuestions(courseLink: String!):  [QuizQuestion!]
 }
@@ -26,6 +26,7 @@ type RootMutation {
     forgotPassword(email: String!, captchaToken: String!): Email
     forgotPasswordChange(token: String!, password: String!, captchaToken: String!): Email
     addCourseToFinished(courseName: String!): Course
+    addCourseToStarted(courseName: String!): Course
     finishQuiz(courseName: String!, userAnswers: String!): QuizScore
 }
 
@@ -64,8 +65,11 @@ type QuizScore {
 
 type User {
     _id: ID!
+    coursesFinished: [Course!]
+    coursesStarted: [Course!]
     email: String!
-    password: String
+    name: String!
+    accountLevel: String!
 }
 
 input UserInput {

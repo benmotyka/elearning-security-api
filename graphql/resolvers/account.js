@@ -34,5 +34,15 @@ export default {
     return {
       accountLevel: args.newAccountLevel 
     };
+  },
+  getUserInfo: async (args, req) => {
+    if (!req.isAuth) {
+      throw new Error("unauthenticated");
+    }
+    const user = await User.findById(req.userId);
+    if (!user) {
+      throw new Error("user-doesnt-exist");
+    }
+    return (user._doc)
   }
 };
