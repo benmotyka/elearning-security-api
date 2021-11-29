@@ -2,7 +2,9 @@ import Article from "../../models/article.js"
 
 export default {
     articles: async (args) => {
-        const articles = await Article.find();
+        const articles = await Article.find({
+            language: args.language
+        });
         let response = articles.map(article => ({...article._doc}));
         if (args.random) {
             const randomArticles = []

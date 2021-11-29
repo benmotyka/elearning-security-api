@@ -10,6 +10,7 @@ const seedArticles = () => {
         header: article.header,
         description: article.description,
         link: article.link,
+        language: article.language,
       }).save();
       console.log(`${newArticle.header} article added!`);
     } catch (error) {

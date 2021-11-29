@@ -15,7 +15,11 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: "article-exists",
-  }
+  },
+  language: {
+    type: String,
+    required: true,
+  },
 });
 
 articleSchema.plugin(autopopulate);
