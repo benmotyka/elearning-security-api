@@ -22,6 +22,10 @@ const courseSchema = new mongoose.Schema({
     min: 1,
     max: 3
   },
+  language: {
+    type: String,
+    required: true,
+  },
   rating: {
     type: Number,
     min: 0,
@@ -31,7 +35,6 @@ const courseSchema = new mongoose.Schema({
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Comment",
-      autopopulate: true,
     },
   ],
 });

@@ -12,7 +12,7 @@ type RootQuery {
     login(userInput: UserInput): LoginData
     article(link: String!): Article!
     articles(quantity: Int, language: String, random: Boolean): [Article!]!
-    courses(quantity: Int): [Course!]!
+    courses(quantity: Int, language: String): [Course!]!
     getUserInfo: User!
     checkIfCourseFinished(courseName: String!): Course
     getQuizQuestions(courseLink: String!):  [QuizQuestion!]

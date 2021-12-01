@@ -3,7 +3,9 @@ import User from "../../models/user.js";
 
 export default {
   courses: async (args) => {
-    const courses = await Course.find();
+    const courses = await Course.find({
+      language: args.language
+    });
     const response = courses.map(course => ({...course._doc}));
     if (args.quantity) return response.slice(0, args.quantity)
     return response

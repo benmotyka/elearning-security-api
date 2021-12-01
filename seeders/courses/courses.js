@@ -10,7 +10,8 @@ const seedCourses = () => {
         header: course.header,
         description: course.description,
         link: course.link,
-        difficulty: course.difficulty
+        difficulty: course.difficulty,
+        language: course.language
       }).save();
       console.log(`${newCourse.header} course added!`);
     } catch (error) {
