@@ -18,7 +18,7 @@ export default {
         return response
     },
     article: async (args) => {
-    const article = await Article.findOne({link: args.link})
+    const article = await Article.findOne({link: args.link, language: args.language})
     if (!article) {
         throw new Error("article-not-found");
       }

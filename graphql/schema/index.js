@@ -10,7 +10,7 @@ schema {
 
 type RootQuery {
     login(userInput: UserInput): LoginData
-    article(link: String!): Article!
+    article(link: String!, language: String): Article!
     articles(quantity: Int, language: String, random: Boolean): [Article!]!
     courses(quantity: Int, language: String): [Course!]!
     getUserInfo: User!
