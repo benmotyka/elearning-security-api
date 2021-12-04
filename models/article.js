@@ -5,7 +5,6 @@ const articleSchema = new mongoose.Schema({
   header: {
     type: String,
     required: true,
-    unique: "article-exists",
   },
   description: {
     type: String,
@@ -14,7 +13,6 @@ const articleSchema = new mongoose.Schema({
   link: {
     type: String,
     required: true,
-    unique: "article-exists",
   },
   language: {
     type: String,

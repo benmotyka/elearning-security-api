@@ -42,17 +42,45 @@ export const coursesData = [
         difficulty: 2
     },
     {
-        header: "Denial Of Service",
-        description: "DDOS",
-        link: "dos",
+        header: "Phishing",
+        description: "How to effectively deal with phishing?",
+        link: "phishing",
+        difficulty: 1,
         language: "en",
-        difficulty: 2
+    },
+    {
+        header: "Ransomware",
+        description: "What ransomware really is and why it is so dangerous?",
+        link: "ransomware",
+        difficulty: 2,
+        language: "en",
+    },
+    {
+        header: "Spoofing",
+        description: "The threat of corporate image impersonation",
+        link: "spoofing",
+        language: "en",
+        difficulty: 1
+    },
+    {
+        header: "Social engineering",
+        description: "How to easily fall prey to a scammer",
+        link: "social-engineering",
+        language: "en",
+        difficulty: 1
     },
     {
         header: "SQL Injection",
-        description: "Dlaczego tak istotne jest dobrze wykonane oprogramowanie?",
+        description: "Why the software that uses database needs to be so secure?",
         link: "sql-injection",
         language: "en",
         difficulty: 3
+    },
+    {
+        header: "Denial of Service",
+        description: "Potential effects of artificial load on a website",
+        link: "dos",
+        language: "en",
+        difficulty: 2
     },
 ]

@@ -5,7 +5,6 @@ const courseSchema = new mongoose.Schema({
   header: {
     type: String,
     required: true,
-    unique: "course-exists",
   },
   description: {
     type: String,
@@ -13,7 +12,6 @@ const courseSchema = new mongoose.Schema({
   },
   link: {
     type: String,
-    unique: "course-exists",
     required: true,
   },
   difficulty: {
