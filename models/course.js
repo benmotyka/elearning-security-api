@@ -3,11 +3,11 @@ import autopopulate from "mongoose-autopopulate";
 
 const courseSchema = new mongoose.Schema({
   header: {
-    type: String,
+    type: Object,
     required: true,
   },
   description: {
-    type: String,
+    type: Object,
     required: true,
   },
   link: {
@@ -19,10 +19,6 @@ const courseSchema = new mongoose.Schema({
     required: true,
     min: 1,
     max: 3
-  },
-  language: {
-    type: String,
-    required: true,
   },
   rating: {
     type: Number,

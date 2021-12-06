@@ -2,10 +2,9 @@ import Article from "../../models/article.js"
 
 export default {
     articles: async (args) => {
-        const articles = await Article.find({
-            language: args.language
-        });
-        let response = articles.map(article => ({...article._doc}));
+        const articles = await Article.find();
+        const lang = args.language
+        let response = articles.map(article => ({...article._doc, description: article.description[lang], header: article.header[lang]}));
         if (args.random) {
             const randomArticles = []
             response.forEach(article => {
@@ -18,10 +17,11 @@ export default {
         return response
     },
     article: async (args) => {
-    const article = await Article.findOne({link: args.link, language: args.language})
+    const article = await Article.findOne({link: args.link})
+    const lang = args.language
     if (!article) {
         throw new Error("article-not-found");
       }
-    return (article._doc)
+    return ({...article._doc, description: article.description[lang], header: article.header[lang]})
     }
 }

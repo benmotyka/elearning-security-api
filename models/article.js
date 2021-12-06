@@ -3,18 +3,14 @@ import autopopulate from "mongoose-autopopulate";
 
 const articleSchema = new mongoose.Schema({
   header: {
-    type: String,
+    type: Object,
     required: true,
   },
   description: {
-    type: String,
+    type: Object,
     required: true,
   },
   link: {
-    type: String,
-    required: true,
-  },
-  language: {
     type: String,
     required: true,
   },
