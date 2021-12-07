@@ -66,8 +66,8 @@ type QuizScore {
 
 type User {
     _id: ID!
-    coursesFinished: [Course!]
-    coursesStarted: [Course!]
+    coursesFinished: [CourseMultiLang!]
+    coursesStarted: [CourseMultiLang!]
     email: String!
     name: String!
     accountLevel: String!
@@ -86,6 +86,19 @@ type Course {
     description: String!
     link: String!
     difficulty: Int!
+}
+
+type CourseMultiLang {
+    _id: ID!
+    header: Langgu!
+    description: Langgu!
+    link: String!
+    difficulty: Int!
+}
+
+type Language {
+    pl: String
+    en: String
 }
 
 type Article {
