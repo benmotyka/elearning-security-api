@@ -90,8 +90,8 @@ type Course {
 
 type CourseMultiLang {
     _id: ID!
-    header: Langgu!
-    description: Langgu!
+    header: Language!
+    description: Language!
     link: String!
     difficulty: Int!
 }
