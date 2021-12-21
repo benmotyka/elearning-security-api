@@ -15,7 +15,6 @@ type RootQuery {
     courses(quantity: Int, language: String): [Course!]!
     getUserInfo: User!
     checkIfCourseFinished(courseName: String!): Course
-    getQuizQuestions(courseLink: String!):  [QuizQuestion!]
 }
 
 type RootMutation {
@@ -107,14 +106,6 @@ type Article {
     description: String!
     link: String!
     language: String!
-}
-
-type QuizQuestion {
-    _id: ID!
-    course: Course
-    question: String!
-    answers: [String!]!
-    correctAnswerIndex: Int
 }
 
 type AccountLevel {

@@ -39,6 +39,11 @@ const userSchema = new mongoose.Schema(
       ref: "Course",
       autopopulate: true,
     }],
+    quizesFinished: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Quiz",
+      autopopulate: true,
+    }],
   },
   { timestamps: true }
 );
