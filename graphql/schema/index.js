@@ -14,7 +14,8 @@ type RootQuery {
     articles(quantity: Int, language: String, random: Boolean): [Article!]!
     courses(quantity: Int, language: String): [Course!]!
     getUserInfo: User!
-    checkIfCourseFinished(courseName: String!): Course
+    checkIfCourseFinished(courseLink: String!): Course
+    getQuizData(courseLink: String!): QuizData
 }
 
 type RootMutation {
@@ -29,6 +30,21 @@ type RootMutation {
     restartCourse(courseName: String!): Course
     finishQuiz(courseName: String!, userAnswers: String!): QuizScore
 }
+
+type QuizData {
+    _id: ID!
+    items: [QuizItem!]!
+}
+
+type QuizItem {
+    question: String!
+    answers: [QuizAnswer]!
+}
+
+type QuizAnswer {
+    text: String!
+}
+
 
 type Id {
     _id: ID!

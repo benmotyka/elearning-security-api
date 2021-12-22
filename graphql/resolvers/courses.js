@@ -45,7 +45,7 @@ addCourseToFinished: async (args, req) => {
     if (!user) {
       throw new Error("user-not-found");
     }
-    const course = await Course.findOne({ link: args.courseName });
+    const course = await Course.findOne({ link: args.courseLink });
     if (!course) {
       throw new Error("course-not-found");
     }
