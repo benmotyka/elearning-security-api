@@ -16,6 +16,8 @@ const quizAttemptsSchema = new mongoose.Schema({
       type: String,
       required: true
   }
+}, {
+  timestamps: true
 });
 
 quizAttemptsSchema.plugin(autopopulate);

@@ -67,7 +67,7 @@ export default {
       await user.save();
       return ({correctAnswers: userScore, numberOfQuestions: quiz.items.length});
     },
-    getQuizAttempts: async (args, req) => {
+    getQuizSummaryData: async (args, req) => {
       if (!req.isAuth) {
         throw new Error("unauthenticated");
       }
@@ -81,12 +81,13 @@ export default {
         courseId: course._id
       })
 
-      const quizAttempts = QuizAttempts.find({
+      const quizAttempt = await QuizAttempts.findOne({
         quizId: quiz.id,
         userId: user.id
+      }).sort({ createdAt: -1 })
+      return ({
+        userAnswers: quizAttempt.userAnswers,
+        quizData: quiz.items
       })
-
-      console.log(quizAttempts)
-
     }
 };

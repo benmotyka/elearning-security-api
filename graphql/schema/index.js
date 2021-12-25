@@ -16,6 +16,7 @@ type RootQuery {
     getUserInfo: User!
     checkIfCourseFinished(courseLink: String!): Course
     getQuizData(courseLink: String!): QuizData
+    getQuizSummaryData(courseLink: String!): QuizSummaryData
 }
 
 type RootMutation {
@@ -41,10 +42,26 @@ type QuizItem {
     answers: [QuizAnswer]!
 }
 
+type QuizSummaryItem {
+    question: String!
+    answers: [QuizSummaryAnswer]!
+}
+
+
 type QuizAnswer {
     text: String!
 }
 
+type QuizSummaryAnswer {
+    text: String!
+    isCorrect: Boolean!
+}
+
+
+type QuizSummaryData {
+    userAnswers: String!
+    quizData: [QuizSummaryItem!]!
+}
 
 type Id {
     _id: ID!
