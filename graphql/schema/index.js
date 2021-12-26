@@ -60,6 +60,7 @@ type QuizSummaryAnswer {
 
 type QuizSummaryData {
     userAnswers: String!
+    scorePercentage: Float!
     quizData: [QuizSummaryItem!]!
 }
 

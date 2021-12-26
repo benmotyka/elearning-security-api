@@ -62,6 +62,7 @@ export default {
         quizId: quiz.id,
         userId: user.id,
         userAnswers: args.userAnswers,
+        scorePercentage: Math.round((userScore / quiz.items.length)*1e2)/1e2
       });
       await quizAttempt.save();
       await user.save();
@@ -77,6 +78,9 @@ export default {
       }
       
       const course = await Course.findOne({ link: args.courseLink });
+      if (!course) {
+        throw new Error("course-not-found");
+      }
       const quiz = await Quiz.findOne({
         courseId: course._id
       })
@@ -87,7 +91,8 @@ export default {
       }).sort({ createdAt: -1 })
       return ({
         userAnswers: quizAttempt.userAnswers,
-        quizData: quiz.items
+        quizData: quiz.items,
+        scorePercentage: quizAttempt.scorePercentage
       })
     }
 };
