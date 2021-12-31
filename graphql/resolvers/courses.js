@@ -1,4 +1,5 @@
 import Course from "../../models/course.js";
+import Quiz from "../../models/quiz.js"
 import User from "../../models/user.js";
 
 export default {
@@ -86,7 +87,7 @@ addCourseToFinished: async (args, req) => {
     }
     return (course._doc);
   },
-  restartCourse: async (args, req) => {
+  restartCourseAndQuiz: async (args, req) => {
     if (!req.isAuth) {
       throw new Error("unauthenticated");
     }
@@ -98,8 +99,13 @@ addCourseToFinished: async (args, req) => {
     if (!course) {
       throw new Error("course-not-found");
     }
-        
+    const quiz = await Quiz.findOne({ courseId: course._id });
+    if (!quiz) {
+      throw new Error("quiz-not-found");
+    }
+
     await user.coursesFinished.pull({ _id: course._id })
+    await user.quizesFinished.pull({ _id: quiz._id })
 
     if (
       !user.coursesStarted.some(

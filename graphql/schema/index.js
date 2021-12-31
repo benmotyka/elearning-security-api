@@ -28,7 +28,7 @@ type RootMutation {
     forgotPasswordChange(token: String!, password: String!, captchaToken: String!): Email
     addCourseToFinished(courseName: String!): Course
     addCourseToStarted(courseName: String!): Course
-    restartCourse(courseName: String!): Course
+    restartCourseAndQuiz(courseName: String!): Course
     finishQuiz(courseLink: String!, userAnswers: String!): QuizScore
 }
 
