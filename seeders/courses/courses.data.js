@@ -23,30 +23,30 @@ export const coursesData = [
         link: "ransomware",
         difficulty: 2,
     },
-    {
-        header: {
-            pl: "Spoofing",
-            en: "Spoofing"
-        },
-        description: {
-            pl: "Zagrożenie podszywania się pod wizerunek firmy",
-            en: "The threat of corporate image impersonation"
-        },
-        link: "spoofing",
-        difficulty: 1
-    },
-    {
-        header: {
-            pl: "Inżynieria społeczna",
-            en: "Social engineering"
-        },
-        description: {
-            pl: "Czyli jak w łatwy sposób paść ofiarą oszusta",
-            en: "How to easily fall prey to a scammer"
-        },
-        link: "social-engineering",
-        difficulty: 1
-    },
+    // {
+    //     header: {
+    //         pl: "Spoofing",
+    //         en: "Spoofing"
+    //     },
+    //     description: {
+    //         pl: "Zagrożenie podszywania się pod wizerunek firmy",
+    //         en: "The threat of corporate image impersonation"
+    //     },
+    //     link: "spoofing",
+    //     difficulty: 1
+    // },
+    // {
+    //     header: {
+    //         pl: "Inżynieria społeczna",
+    //         en: "Social engineering"
+    //     },
+    //     description: {
+    //         pl: "Czyli jak w łatwy sposób paść ofiarą oszusta",
+    //         en: "How to easily fall prey to a scammer"
+    //     },
+    //     link: "social-engineering",
+    //     difficulty: 1
+    // },
     {
         header: {
             pl: "Wstrzyknięcie SQL",
