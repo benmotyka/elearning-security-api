@@ -187,4 +187,98 @@ export const quizesData = [
       },
     ],
   },
+  {
+    courseLink: "phishing",
+    items: [
+      {
+        question: "Który z poniższych NIE ZALICZA SIĘ do ataków phishingowych?",
+        answers: [
+          {
+            text: "Pharming",
+            isCorrect: false,
+          },
+          {
+            text: "Phishing mailowy",
+            isCorrect: false,
+          },
+          {
+            text: "Data phishing",
+            isCorrect: true,
+          },
+          {
+            text: "Spear phishing",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "Jaka grupa osób może paść ofiarą ataków phishingowych?",
+        answers: [
+          {
+            text: "Pracownicy korporacji",
+            isCorrect: false,
+          },
+          {
+            text: "Zwykli użytkownicy",
+            isCorrect: false,
+          },
+          {
+            text: "Osoby nie korzystające z internetu",
+            isCorrect: false,
+          },
+          {
+            text: "Wszystkie odpowiedzi są prawidłowe",
+            isCorrect: true,
+          },
+        ],
+      },
+      {
+        question: "Czy atakujący może podszyć się pod dowolnego nadawcę SMS?",
+        answers: [
+          {
+            text: "Fałsz",
+            isCorrect: false,
+          },
+          {
+            text: "Prawda",
+            isCorrect: true,
+          }
+        ],
+      },
+      {
+        question: "Najbardziej podatnym elementem ataku phishingowego jest...",
+        answers: [
+          {
+            text: "Przeglądarka internetowa",
+            isCorrect: false,
+          },
+          {
+            text: "System operacyjny",
+            isCorrect: false,
+          },
+          {
+            text: "Filtr antyspamowy",
+            isCorrect: false,
+          },
+          {
+            text: "Człowiek",
+            isCorrect: true,
+          },
+        ],
+      },
+      {
+        question: "Używanie tych samych danych logowania dla każdej witryny to dobry pomysł.",
+        answers: [
+          {
+            text: "Fałsz",
+            isCorrect: true,
+          },
+          {
+            text: "Prawda",
+            isCorrect: false,
+          }
+        ],
+      },
+    ],
+  },
 ];
