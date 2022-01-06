@@ -2,8 +2,8 @@ import Quiz from "../../models/quiz.js";
 import Course from "../../models/course.js"
 import {quizesData} from './quizes.data.js'
 
-const seedQuizes = () => {
-    Quiz.collection.drop();
+const seedQuizes = async () => {
+    await Quiz.collection.drop();
     console.log("Seeding quizes!")
     quizesData.map(async (quiz) => {
       try {

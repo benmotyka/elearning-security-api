@@ -1,8 +1,8 @@
 import Course from "../../models/course.js";
 import { coursesData } from "./courses.data.js";
 
-const seedCourses = () => {
-  Course.collection.drop();
+const seedCourses = async () => {
+  await Course.collection.drop();
   console.log("Seeding courses!")
   coursesData.map(async (course) => {
     try {
