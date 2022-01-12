@@ -23,30 +23,6 @@ export const coursesData = [
         link: "ransomware",
         difficulty: 2,
     },
-    // {
-    //     header: {
-    //         pl: "Spoofing",
-    //         en: "Spoofing"
-    //     },
-    //     description: {
-    //         pl: "Zagrożenie podszywania się pod wizerunek firmy",
-    //         en: "The threat of corporate image impersonation"
-    //     },
-    //     link: "spoofing",
-    //     difficulty: 1
-    // },
-    // {
-    //     header: {
-    //         pl: "Inżynieria społeczna",
-    //         en: "Social engineering"
-    //     },
-    //     description: {
-    //         pl: "Czyli jak w łatwy sposób paść ofiarą oszusta",
-    //         en: "How to easily fall prey to a scammer"
-    //     },
-    //     link: "social-engineering",
-    //     difficulty: 1
-    // },
     {
         header: {
             pl: "Wstrzyknięcie SQL",
@@ -69,6 +45,42 @@ export const coursesData = [
             en: "Potential effects of artificial load on a website"
         },
         link: "dos",
+        difficulty: 2
+    },
+    {
+        header: {
+            pl: "Atak XSS",
+            en: "XSS Attack"
+        },
+        description: {
+            pl: "Jeden z najczęstszych i najgrożniejszych ataków na strony internetowe",
+            en: "One of most common and dangerous attacks for websites"
+        },
+        link: "xss",
+        difficulty: 3
+    },
+    {
+        header: {
+            pl: "Keylogger",
+            en: "Keylogger"
+        },
+        description: {
+            pl: "Oprogramowanie szpiegujące aktywność ofiary",
+            en: "Malicious spyware that monitors victim's activity"
+        },
+        link: "keylogger",
+        difficulty: 2
+    },
+    {
+        header: {
+            pl: "Atak man-in-the-middle",
+            en: "Man-in-the-middle attack"
+        },
+        description: {
+            pl: "Atak sieciowy umożliwiający podsłuchiwanie danych",
+            en: "The eavesdropping network attack"
+        },
+        link: "mitm",
         difficulty: 2
     }
 ]

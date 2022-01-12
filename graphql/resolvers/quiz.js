@@ -84,7 +84,6 @@ export default {
       const quiz = await Quiz.findOne({
         courseId: course._id
       })
-
       const quizAttempt = await QuizAttempts.findOne({
         quizId: quiz.id,
         userId: user.id

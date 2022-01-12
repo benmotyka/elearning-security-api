@@ -7,7 +7,6 @@ const seedQuizes = async () => {
     console.log("Seeding quizes!")
     quizesData.map(async (quiz) => {
       try {
-
         const course = await Course.findOne({ link: quiz.courseLink });
 
         const newQuiz = await new Quiz({
