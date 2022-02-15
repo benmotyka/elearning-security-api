@@ -281,4 +281,208 @@ export const quizesData = [
       },
     ],
   },
+  {
+    courseLink: "dos",
+    items: [
+      {
+        question: "Co ma na celu atak DoS?",
+        answers: [
+          {
+            text: "Wykradnięcie danych ofiary",
+            isCorrect: false,
+          },
+          {
+            text: "Wstrzyknięcie złośliwego skryptu",
+            isCorrect: false,
+          },
+          {
+            text: "Przechwycenie treści odwiedzanych stron internetowych przez ofiarę",
+            isCorrect: false,
+          },
+          {
+            text: "Zablokowanie dostępu do podstawowych funkcjonalności strony",
+            isCorrect: true,
+          },
+        ],
+      },
+      {
+        question: "Czym różni się atak DDoS od ataku DoS?",
+        answers: [
+          {
+            text: "Wieloma źródłami ataku",
+            isCorrect: true,
+          },
+          {
+            text: "Technologią wykorzystaną w ataku",
+            isCorrect: false,
+          },
+          {
+            text: "Celem ataku",
+            isCorrect: false,
+          },
+          {
+            text: "Wszystkie odpowiedzi są prawidłowe",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "Który z typów ataku DDoS NIE JEST prawidłowy?",
+        answers: [
+          {
+            text: "Atak wolumetryczny",
+            isCorrect: false,
+          },
+          {
+            text: "Atak TCP",
+            isCorrect: false,
+          },
+          {
+            text: "Atak typu Reflected",
+            isCorrect: true,
+          },
+          {
+            text: "Atak fragmentacyjny",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "Efekty ataku DDoS mogą być zauważalne po chwili od jego rozpoczęcia",
+        answers: [
+          {
+            text: "Fałsz",
+            isCorrect: false,
+          },
+          {
+            text: "Prawda",
+            isCorrect: true,
+          },
+        ],
+      },
+      {
+        question: "Która z poniższych opcji może być wykorzystana celem przeciwdziałania atakom typu DDoS?",
+        answers: [
+          {
+            text: "Używanie zapór ogniowych",
+            isCorrect: false,
+          },
+          {
+            text: "Migracja infrastruktury do chmury publicznej",
+            isCorrect: false,
+          },
+          {
+            text: "Mechanizm CAPTCHA",
+            isCorrect: false,
+          },
+          {
+            text: "Wszystkie odpowiedzi są prawidłowe",
+            isCorrect: true,
+          }
+        ],
+      },
+    ],
+  },
+  {
+    courseLink: "keylogger",
+    items: [
+      {
+        question: "Czym jest keylogger?",
+        answers: [
+          {
+            text: "Narzędziem lub oprogramowaniem rejestrującym aktywność klawiatury",
+            isCorrect: true,
+          },
+          {
+            text: "Popularnym złośliwym skryptem",
+            isCorrect: false,
+          },
+          {
+            text: "Mechanizmem blokującym dostęp do wybranych usług",
+            isCorrect: false,
+          },
+          {
+            text: "Wirusem, który przekierowuje użytkownika na strony phishingowe",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "Urządzenie może zostać zainfekowane keyloggerem poprzez...",
+        answers: [
+          {
+            text: "Atak XSS",
+            isCorrect: false,
+          },
+          {
+            text: "Fizyczny dostęp do urządzenia",
+            isCorrect: false,
+          },
+          {
+            text: "Maile phishingowe",
+            isCorrect: false,
+          },
+          {
+            text: "Wszystkie odpowiedzi są prawidłowe",
+            isCorrect: true,
+          },
+        ],
+      },
+      {
+        question: "Na jakie rodzaje można podzielić keyloggery?",
+        answers: [
+          {
+            text: "Tylko sprzętowe",
+            isCorrect: false,
+          },
+          {
+            text: "Sprzętowe i programowe",
+            isCorrect: true,
+          },
+          {
+            text: "Tylko programowe",
+            isCorrect: false,
+          },
+          {
+            text: "Sprzętowe, programowe i sieciowe",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "Używanie antywirusa w całości eliminuje zagrożenie ataku keyloggerem sprzętowym",
+        answers: [
+          {
+            text: "Fałsz",
+            isCorrect: true,
+          },
+          {
+            text: "Prawda",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "Która z poniższych opcji pomaga przeciwdziałać skutkom infekcji keyloggerem?",
+        answers: [
+          {
+            text: "Używanie uwierzytelniania dwuskładnikowego (2FA)",
+            isCorrect: true,
+          },
+          {
+            text: "Formatowanie dysku urządzenia",
+            isCorrect: false,
+          },
+          {
+            text: "Usunięcie złośliwego oprogramowania",
+            isCorrect: false,
+          },
+          {
+            text: "Wszystkie odpowiedzi są prawidłowe",
+            isCorrect: false,
+          }
+        ],
+      },
+    ],
+  },
 ];
