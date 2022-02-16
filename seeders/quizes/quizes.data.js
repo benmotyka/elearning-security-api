@@ -113,13 +113,13 @@ export const quizesData = [
         question: "Atak SQL Injection nie ma związku z bazami danych",
         answers: [
           {
+            text: "Prawda",
+            isCorrect: false,
+          },
+          {
             text: "Fałsz",
             isCorrect: true,
           },
-          {
-            text: "Prawda",
-            isCorrect: false,
-          }
         ],
       },
       {
@@ -236,13 +236,13 @@ export const quizesData = [
         question: "Czy atakujący może podszyć się pod dowolnego nadawcę SMS?",
         answers: [
           {
+            text: "Prawda",
+            isCorrect: true,
+          },
+          {
             text: "Fałsz",
             isCorrect: false,
           },
-          {
-            text: "Prawda",
-            isCorrect: true,
-          }
         ],
       },
       {
@@ -270,12 +270,12 @@ export const quizesData = [
         question: "Używanie tych samych danych logowania dla każdej witryny to dobry pomysł.",
         answers: [
           {
-            text: "Fałsz",
-            isCorrect: true,
-          },
-          {
             text: "Prawda",
             isCorrect: false,
+          },
+          {
+            text: "Fałsz",
+            isCorrect: true,
           }
         ],
       },
@@ -351,12 +351,12 @@ export const quizesData = [
         question: "Efekty ataku DDoS mogą być zauważalne po chwili od jego rozpoczęcia",
         answers: [
           {
-            text: "Fałsz",
-            isCorrect: false,
-          },
-          {
             text: "Prawda",
             isCorrect: true,
+          },
+          {
+            text: "Fałsz",
+            isCorrect: false,
           },
         ],
       },
@@ -453,12 +453,12 @@ export const quizesData = [
         question: "Używanie antywirusa w całości eliminuje zagrożenie ataku keyloggerem sprzętowym",
         answers: [
           {
-            text: "Fałsz",
-            isCorrect: true,
-          },
-          {
             text: "Prawda",
             isCorrect: false,
+          },
+          {
+            text: "Fałsz",
+            isCorrect: true,
           },
         ],
       },
@@ -485,4 +485,106 @@ export const quizesData = [
       },
     ],
   },
+  {
+    courseLink: "xss",
+    items: [
+      {
+        question: "Na czym polega atak XSS?",
+        answers: [
+          {
+            text: "Na umieszczeniu złośliwego skryptu w bazie danych",
+            isCorrect: false,
+          },
+          {
+            text: "Na uzyskaniu nieautoryzowanego dostępu do serwisu internetowego",
+            isCorrect: false,
+          },
+          {
+            text: "Na umieszczeniu złośliwego skryptu w zawartości strony internetowej",
+            isCorrect: false,
+          },
+          {
+            text: "Wszystkie odpowiedzi są prawidłowe",
+            isCorrect: true,
+          },
+        ],
+      },
+      {
+        question: "Typem ataku XSS NIE JEST:",
+        answers: [
+          {
+            text: "Volumetric XSS",
+            isCorrect: true,
+          },
+          {
+            text: "Reflected XSS",
+            isCorrect: false,
+          },
+          {
+            text: "Dom-based XSS",
+            isCorrect: false,
+          },
+          {
+            text: "Stored XSS",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "Atak XSS może zmodyfikować zawartość podatnej strony internetowej",
+        answers: [
+          {
+            text: "Prawda",
+            isCorrect: true,
+          },
+          {
+            text: "Fałsz",
+            isCorrect: false,
+          }
+        ],
+      },
+      {
+        question: "Jaki rodzaj strony ma największe prawdopodobieństwo na bycie podatnym na atak XSS?",
+        answers: [
+          {
+            text: "Strona umożliwiająca przesyłanie i oglądanie wideo",
+            isCorrect: false,
+          },
+          {
+            text: "Blog, na którym można dodawać wpisy i komentarze",
+            isCorrect: true,
+          },
+          {
+            text: "Strona przedstawiająca usługi oferowane przez firmę",
+            isCorrect: false,
+          },
+          {
+            text: "Gra przeglądarkowa",
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: "Która z poniższych opcji pozwala programistom na niwelowanie prawdopodobieństwa podatności strony na atak XSS?",
+        answers: [
+          {
+            text: "Używanie popularnych szkieletów oprogramowania (frameworków) w procesie tworzenia serwisu",
+            isCorrect: false,
+          },
+          {
+            text: "Stosowanie odpowiedniej polityki CORS",
+            isCorrect: false,
+          },
+          {
+            text: "Walidacja i czyszczenie danych wejściowych",
+            isCorrect: true,
+          },
+          {
+            text: "Wszystkie odpowiedzi są prawidłowe",
+            isCorrect: false,
+          }
+        ],
+      },
+    ],
+  }
 ];
