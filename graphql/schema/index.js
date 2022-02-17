@@ -59,6 +59,7 @@ type QuizSummaryAnswer {
 
 
 type QuizSummaryData {
+    quizName: LanguageType
     userAnswers: String!
     scorePercentage: Float!
     quizData: [QuizSummaryItem!]!
@@ -123,13 +124,13 @@ type Course {
 
 type CourseMultiLang {
     _id: ID!
-    header: Language!
-    description: Language!
+    header: LanguageType!
+    description: LanguageType!
     link: String!
     difficulty: Int!
 }
 
-type Language {
+type LanguageType {
     pl: String
     en: String
 }

@@ -89,6 +89,7 @@ export default {
         userId: user.id
       }).sort({ createdAt: -1 })
       return ({
+        quizName: quiz.courseId.header,
         userAnswers: quizAttempt.userAnswers,
         quizData: quiz.items,
         scorePercentage: quizAttempt.scorePercentage
