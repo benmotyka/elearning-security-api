@@ -69,7 +69,7 @@ export const coursesData = [
             en: "Malicious spyware that monitors victim's activity"
         },
         link: "keylogger",
-        difficulty: 2
+        difficulty: 1
     },
     {
         header: {
