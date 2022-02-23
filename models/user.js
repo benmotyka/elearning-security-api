@@ -20,11 +20,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    actions: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "UserActions",
-      autopopulate: true,
-    },
     accountLevel: {
       type: String,
       required: true,

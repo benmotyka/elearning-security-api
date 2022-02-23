@@ -33,11 +33,6 @@ app.use(
   })
 );
 
-process.argv.map(arg => {
-  if (arg === "seedCourses") seedCourses(); 
-  if (arg === "seedArticles") seedArticles();
-  if (arg === "seedQuizes") seedQuizes();
-})
 
 const port = process.env.PORT || 3000;
 

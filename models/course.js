@@ -19,18 +19,7 @@ const courseSchema = new mongoose.Schema({
     required: true,
     min: 1,
     max: 3
-  },
-  rating: {
-    type: Number,
-    min: 0,
-    max: 5,
-  },
-  comments: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Comment",
-    },
-  ],
+  }
 });
 
 courseSchema.plugin(autopopulate);
