@@ -2,7 +2,6 @@ import Article from "../../models/article.js";
 import { articlesData } from "./articles.data.js";
 
 const seedArticles = async () => {
-  await Article.collection.drop();
   console.log("Seeding articles!");
   articlesData.map(async (article) => {
     try {

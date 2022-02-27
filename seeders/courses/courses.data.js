@@ -25,7 +25,7 @@ export const coursesData = [
     },
     {
         header: {
-            pl: "Wstrzyknięcie SQL",
+            pl: "SQL Injection",
             en: "SQL Injection"
         },
         description: {
