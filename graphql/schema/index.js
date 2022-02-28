@@ -63,6 +63,7 @@ type QuizSummaryData {
     userAnswers: String!
     scorePercentage: Float!
     quizData: [QuizSummaryItem!]!
+    showRateButton: Boolean!
 }
 
 type Id {

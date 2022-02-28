@@ -2,6 +2,7 @@ import Course from "../../models/course.js";
 import Quiz from "../../models/quiz.js"
 import User from "../../models/user.js";
 import QuizAttempts from "../../models/quizAttempts.js";
+import CourseRating from "../../models/courseRating.js";
 
 export default {
     getQuizData: async (args, req) => {
@@ -88,11 +89,20 @@ export default {
         quizId: quiz.id,
         userId: user.id
       }).sort({ createdAt: -1 })
+
+      const courseRate = await CourseRating.findOne({
+        courseId: course.id,
+        userId: user.id
+      })
+
+      const userRated = courseRate ? true : false 
+
       return ({
         quizName: quiz.courseId.header,
         userAnswers: quizAttempt.userAnswers,
         quizData: quiz.items,
-        scorePercentage: quizAttempt.scorePercentage
+        scorePercentage: quizAttempt.scorePercentage,
+        showRateButton: !userRated
       })
     }
 };
