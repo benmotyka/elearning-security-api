@@ -1,6 +1,8 @@
 import Course from "../../models/course.js";
 import Quiz from "../../models/quiz.js"
 import User from "../../models/user.js";
+import CourseRating from "../../models/courseRating.js"
+import validateCaptcha from "../../functions/captcha/validateCaptcha.js";
 
 export default {
   courses: async (args) => {
@@ -118,4 +120,28 @@ addCourseToFinished: async (args, req) => {
     }
     return (course._doc);
   },
+  rateCourse: async (args, req) => {
+    const {courseName, rate, comment, captchaToken} = args
+    await validateCaptcha(captchaToken);
+    if (!req.isAuth) {
+      throw new Error("unauthenticated");
+    }
+    const user = await User.findById(req.userId);
+    if (!user) {
+      throw new Error("user-not-found");
+    }
+    const course = await Course.findOne({ link: courseName });
+    if (!course) {
+      throw new Error("course-not-found");
+    }
+    
+    const newCourseRating = new CourseRating({
+      courseId: course.id,
+      userId: user.id,
+      comment,
+      rating: rate
+    });
+    await newCourseRating.save();
+    return ({resultStatus: 'ok'})
+  }
 };

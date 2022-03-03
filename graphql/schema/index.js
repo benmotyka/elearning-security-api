@@ -30,6 +30,7 @@ type RootMutation {
     addCourseToStarted(courseName: String!): Course
     restartCourseAndQuiz(courseName: String!): Course
     finishQuiz(courseLink: String!, userAnswers: String!): QuizScore
+    rateCourse(courseName: String!, rate: Int!, comment: String, captchaToken: String!): Status
 }
 
 type QuizData {
@@ -55,6 +56,10 @@ type QuizAnswer {
 type QuizSummaryAnswer {
     text: String!
     isCorrect: Boolean!
+}
+
+type Status {
+    resultStatus: String!
 }
 
 
