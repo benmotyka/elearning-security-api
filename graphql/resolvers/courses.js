@@ -143,5 +143,25 @@ addCourseToFinished: async (args, req) => {
     });
     await newCourseRating.save();
     return ({resultStatus: 'ok'})
+  },
+  getCourseRating: async (args) => {
+    const course = await Course.findOne({ link: args.courseLink });
+    if (!course) {
+      throw new Error("course-not-found");
+    }
+    const rates = await CourseRating.find({courseId: course.id})
+    const comments = rates.map(rate => {
+      if (rate.comment) return {
+        username: rate.userId.name,
+        comment: rate.comment,
+        createdAt: rate.createdAt
+      }
+    })
+    const averageRate = rates.length ? rates.reduce(function (acc, rate) { return acc + rate.rating; }, 0) / rates.length : 0;
+    return ({
+      averageRate, 
+      votes: rates.length,
+      comments
+    })
   }
 };

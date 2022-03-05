@@ -17,6 +17,7 @@ type RootQuery {
     checkIfCourseFinished(courseLink: String!): Course
     getQuizData(courseLink: String!): QuizData
     getQuizSummaryData(courseLink: String!): QuizSummaryData
+    getCourseRating(courseLink: String!): CourseRate!
 }
 
 type RootMutation {
@@ -151,5 +152,17 @@ type Article {
 
 type AccountLevel {
     accountLevel: String
+}
+
+type CourseRate {
+    averageRate: Float!
+    votes: Int!
+    comments: [CourseComment]!
+}
+
+type CourseComment {
+    username: String!
+    comment: String!
+    createdAt: String! 
 }
 `);
