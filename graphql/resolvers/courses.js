@@ -150,13 +150,13 @@ addCourseToFinished: async (args, req) => {
       throw new Error("course-not-found");
     }
     const rates = await CourseRating.find({courseId: course.id})
-    const comments = rates.map(rate => {
-      if (rate.comment) return {
-        username: rate.userId.name,
-        comment: rate.comment,
-        createdAt: rate.createdAt
-      }
-    })
+    const comments = rates.filter(rate => 
+      (rate.comment)
+    ).map(rate => ({
+      username: rate.userId.name,
+      comment: rate.comment,
+      createdAt: rate.createdAt
+    }))
     const averageRate = rates.length ? rates.reduce(function (acc, rate) { return acc + rate.rating; }, 0) / rates.length : 0;
     return ({
       averageRate, 
