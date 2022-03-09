@@ -1,9 +1,13 @@
 import Article from "../../models/article.js"
+import loggerConfig from "../../config/logger.js"
+const logger = loggerConfig({label: 'courses-resolver'})
 
 export default {
     articles: async (args) => {
-        const articles = await Article.find();
         const lang = args.language
+        const articles = await Article.find();
+        logger.info(`Fetching articles of lang: ${lang}`)
+
         let response = articles.map(article => ({...article._doc, description: article.description[lang], header: article.header[lang]}));
         if (args.random) {
             const randomArticles = []
@@ -17,11 +21,13 @@ export default {
         return response
     },
     article: async (args) => {
-    const article = await Article.findOne({link: args.link})
-    const lang = args.language
-    if (!article) {
-        throw new Error("article-not-found");
-      }
-    return ({...article._doc, description: article.description[lang], header: article.header[lang]})
+        const lang = args.language
+        const article = await Article.findOne({link: args.link})
+        logger.info(`Fetching one specific article: ${args.link} of lang: ${lang}`)
+
+        if (!article) {
+            throw new Error("article-not-found");
+        }
+        return ({...article._doc, description: article.description[lang], header: article.header[lang]})
     }
 }

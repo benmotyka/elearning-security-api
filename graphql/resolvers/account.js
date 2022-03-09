@@ -1,6 +1,8 @@
 import User from "../../models/user.js";
 import bcrypt from "bcryptjs";
 import validateCaptcha from "../../functions/captcha/validateCaptcha.js";
+import loggerConfig from "../../config/logger.js"
+const logger = loggerConfig({label: 'courses-resolver'})
 
 export default {
   resetPassword: async (args, req) => {
@@ -12,6 +14,9 @@ export default {
     if (!user) {
       throw new Error("user-doesnt-exist");
     }
+
+    logger.info(`User: ${user.email} used reset password function from my account`)
+
     const isEqual = await bcrypt.compare(args.oldPassword, user.password);
     if (!isEqual) {
       throw new Error("wrong-old-password");
@@ -27,6 +32,9 @@ export default {
       throw new Error("unauthenticated");
     }
     const user = await User.findById(req.userId);
+
+    logger.info(`User: ${user.email} changed their account level to: ${args.newAccountLevel}`)
+
     if (!user) {
       throw new Error("user-doesnt-exist");
     }
@@ -43,6 +51,8 @@ export default {
     if (!user) {
       throw new Error("user-doesnt-exist");
     }
+    logger.info(`Getting info of user: ${user.email}`)
+
     return (user._doc)
   }
 };

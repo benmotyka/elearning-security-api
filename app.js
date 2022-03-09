@@ -8,11 +8,8 @@ import graphqlSchema from "./graphql/schema/index.js";
 import graphqlResolvers from "./graphql/resolvers/index.js";
 import verifyToken from "./middleware/verifyToken.js";
 
-import seedCourses from "./seeders/courses/courses.js"
 import cors from "cors"
 import http from "http"
-import seedArticles from "./seeders/articles/articles.js";
-import seedQuizes from "./seeders/quizes/quizes.js";
 dotenv.config();
 const app = express();
 

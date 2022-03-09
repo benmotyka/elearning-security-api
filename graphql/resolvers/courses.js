@@ -3,10 +3,13 @@ import Quiz from "../../models/quiz.js"
 import User from "../../models/user.js";
 import CourseRating from "../../models/courseRating.js"
 import validateCaptcha from "../../functions/captcha/validateCaptcha.js";
+import loggerConfig from "../../config/logger.js"
+const logger = loggerConfig({label: 'courses-resolver'})
 
 export default {
   courses: async (args) => {
     const lang = args.language
+    logger.info(`Fetching courses of lang: ${lang}`)
     const courses = await Course.find();
     const response = courses.map(course => 
       ({...course._doc, description: course.description[lang], header: course.header[lang]})
@@ -22,6 +25,9 @@ addCourseToFinished: async (args, req) => {
     if (!user) {
       throw new Error("user-not-found");
     }
+
+    logger.info(`Adding course: ${args.courseName} to finished for user: ${user.email}`)
+
     const course = await Course.findOne({ link: args.courseName });
     if (!course) {
       throw new Error("course-not-found");
@@ -48,6 +54,7 @@ addCourseToFinished: async (args, req) => {
     if (!user) {
       throw new Error("user-not-found");
     }
+    logger.info(`Checking if course: ${args.courseLink} is finished for user: ${user.email}`)
     const course = await Course.findOne({ link: args.courseLink });
     if (!course) {
       throw new Error("course-not-found");
@@ -58,6 +65,7 @@ addCourseToFinished: async (args, req) => {
           alreadyFinished._id.toString() === course._id.toString()
       )
     ) {
+    logger.info(`Looks like course: ${args.courseLink} is not finished for user: ${user.email}`)
       throw new Error("course-not-finished");
     }
     return (course._doc);
@@ -68,6 +76,8 @@ addCourseToFinished: async (args, req) => {
     const user = await User.findById(req.userId);
     if (!user) throw new Error("user-not-found");
     
+    logger.info(`Adding course: ${args.courseName} to started for user: ${user.email}`)
+
     const course = await Course.findOne({ link: args.courseName });
 
     if (!course) throw new Error("course-not-found");
@@ -97,6 +107,9 @@ addCourseToFinished: async (args, req) => {
     if (!user) {
       throw new Error("user-not-found");
     }
+
+    logger.info(`Restarting course and quiz: ${args.courseName} for user: ${user.email}`)
+
     const course = await Course.findOne({ link: args.courseName });
     if (!course) {
       throw new Error("course-not-found");
@@ -130,6 +143,9 @@ addCourseToFinished: async (args, req) => {
     if (!user) {
       throw new Error("user-not-found");
     }
+    
+    logger.info(`Adding rate for course: ${courseName} from user: ${user.email}. Rate: ${rate}, comment: ${comment}`)
+
     const course = await Course.findOne({ link: courseName });
     if (!course) {
       throw new Error("course-not-found");
@@ -149,6 +165,7 @@ addCourseToFinished: async (args, req) => {
     if (!course) {
       throw new Error("course-not-found");
     }
+    logger.info(`Getting rating for course: ${args.courseLink}`)
     const rates = await CourseRating.find({courseId: course.id})
     const comments = rates.filter(rate => 
       (rate.comment)

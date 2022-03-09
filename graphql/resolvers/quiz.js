@@ -3,6 +3,8 @@ import Quiz from "../../models/quiz.js"
 import User from "../../models/user.js";
 import QuizAttempts from "../../models/quizAttempts.js";
 import CourseRating from "../../models/courseRating.js";
+import loggerConfig from "../../config/logger.js"
+const logger = loggerConfig({label: 'quiz-resolver'})
 
 export default {
     getQuizData: async (args, req) => {
@@ -13,6 +15,8 @@ export default {
     if (!user) {
       throw new Error("user-not-found");
     }
+    logger.info(`Getting ${args.courseLink} quiz data for user: ${user.email}`)
+
     const course = await Course.findOne({ link: args.courseLink });
     const quiz = await Quiz.findOne({
         courseId: course._id
@@ -38,6 +42,9 @@ export default {
       if (!user) {
         throw new Error("user-not-found");
       }
+
+      logger.info(`Finishing quiz: ${args.courseLink} for user: ${user.email}`)
+
       const course = await Course.findOne({ link: args.courseLink });
       const quiz = await Quiz.findOne({
           courseId: course._id
@@ -78,6 +85,8 @@ export default {
         throw new Error("user-not-found");
       }
       
+      logger.info(`Getting quiz: ${args.courseLink} summary data for user: ${user.email}`)
+
       const course = await Course.findOne({ link: args.courseLink });
       if (!course) {
         throw new Error("course-not-found");
