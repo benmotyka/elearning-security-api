@@ -32,7 +32,9 @@ export default {
     ) {
       throw new Error("quiz-finished");
     }
-    return (quiz._doc);
+    return ({
+      _id: quiz.id, items: quiz.items
+    });
     },
     finishQuiz: async (args, req) => {
       if (!req.isAuth) {

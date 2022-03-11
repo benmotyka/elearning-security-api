@@ -3,82 +3,136 @@ export const quizesData = [
     courseLink: "ransomware",
     items: [
       {
-        question: "Co jest głównym celem ransomware?",
+        question: {
+          pl: "Co jest głównym celem ransomware?",
+          en: "What is the main target of ransomware?",
+        },
         answers: [
           {
-            text: "Wykradnięcie danych od użytkownika",
+            text: {
+              pl: "Wykradnięcie danych od użytkownika",
+              en: "Stealing user data"
+            },
             isCorrect: false,
           },
           {
-            text: "Usunięcie wszystkich danych na komputerze ofiary",
+            text: {
+              pl: "Usunięcie wszystkich danych na komputerze ofiary",
+              en: "Deletion of all data on the victim's computer"
+            },
             isCorrect: false,
           },
           {
-            text: "Zaszyfrowanie danych na urządzeniu końcowym",
+            text: {
+              pl: "Zaszyfrowanie danych na urządzeniu",
+              en: "Encrypting data on the device"
+            },
             isCorrect: true,
           },
           {
-            text: "Infekcja przeglądarki celem wyświetlania reklam",
+            text: {
+              pl: "Infekcja przeglądarki celem wyświetlania reklam",
+              en: "Infection of the browser to display advertisements"
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Częste wykonywanie kopii zapasowej danych nie chroni całkowicie przed konsekwencjami ransomware",
-        answers: [
+        question: {
+          pl: "Częste wykonywanie kopii zapasowej danych nie chroni całkowicie przed konsekwencjami ransomware",
+          en: "Frequent data backup does not completely protect against the consequences of ransomware"
+        },
+          answers: [
           {
-            text: "Prawda",
+            text: {
+              pl: "Prawda",
+              en: "True",
+            },
             isCorrect: true,
           },
           {
-            text: "Fałsz",
+            text: {
+              pl: "Fałsz",
+              en: "False"
+            },
             isCorrect: false,
           }
         ],
       },
       {
-        question: "Którym z wymienionych sposobów, ransomware zazwyczaj NIE DOSTAJE SIĘ do urządzenia końcowego?",
+        question: {
+          pl: "Którym z wymienionych sposobów, ransomware zazwyczaj NIE DOSTAJE SIĘ do urządzenia?",
+          en: "Which of the following ways does ransomware usually NOT infects the device?"
+        },
         answers: [
           {
-            text: "Zdalne wykonanie kodu",
+            text: {
+              pl: "Zdalne wykonanie kodu",
+              en: "Remote code execution"
+            },
             isCorrect: false,
           },
           {
-            text: "Maile phishingowe",
+            text: {
+              pl: "Maile phishingowe",
+              en: "Phishing mails"
+            },
             isCorrect: false,
           },
           {
-            text: "Zdalny dostęp",
+            text: {
+              pl: "Zdalny dostęp",
+              en: "Remote access"
+            },
             isCorrect: false,
           },
           {
-            text: "Sieć Wi-Fi",
+            text: {
+              pl: "Sieć Wi-Fi",
+              en: "Wi-Fi network"
+            },
             isCorrect: true,
           },
         ],
       },
       {
-        question: "W przypadku infekcji ransomware, pierwszą rzeczą, którą należy zrobić, jest zapłata okupu",
+        question: {
+          pl: "W przypadku infekcji ransomware, pierwszą rzeczą, którą należy zrobić, jest zapłata okupu",
+          en: "In the case of a ransomware infection, the first thing to do is pay the ransom"
+        },
         answers: [
           {
-            text: "Prawda",
+            text: {
+              pl: "Prawda",
+              en: "True"
+            },
             isCorrect: false,
           },
           {
-            text: "Fałsz",
+            text: {
+              pl: "Fałsz",
+              en: "False"
+            },
             isCorrect: true,
           }
         ],
       },
       {
-        question: "Używanie dobrego programu antywirusowego całkowicie eliminuje zagrożenie ransomware",
+        question: "Using a good antivirus program completely eliminates the threat of ransomware",
         answers: [
           {
-            text: "Prawda",
+            text: {
+              pl: "Prawda",
+              en: "True"
+            },
             isCorrect: false,
           },
           {
-            text: "Fałsz",
+            text: {
+              pl: "Fałsz",
+              en: "False"
+            },
             isCorrect: true,
           }
         ],

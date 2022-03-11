@@ -40,7 +40,7 @@ type QuizData {
 }
 
 type QuizItem {
-    question: String!
+    question: LanguageType!
     answers: [QuizAnswer]!
 }
 
@@ -51,11 +51,11 @@ type QuizSummaryItem {
 
 
 type QuizAnswer {
-    text: String!
+    text: LanguageType!
 }
 
 type QuizSummaryAnswer {
-    text: String!
+    text: LanguageType!
     isCorrect: Boolean!
 }
 
