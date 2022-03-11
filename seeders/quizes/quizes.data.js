@@ -11,28 +11,28 @@ export const quizesData = [
           {
             text: {
               pl: "Wykradnięcie danych od użytkownika",
-              en: "Stealing user data"
+              en: "Stealing user data",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Usunięcie wszystkich danych na komputerze ofiary",
-              en: "Wiping data on the victim's computer"
+              en: "Wiping data on the victim's computer",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Zaszyfrowanie danych na urządzeniu",
-              en: "Encrypting data on the device"
+              en: "Encrypting data on the device",
             },
             isCorrect: true,
           },
           {
             text: {
               pl: "Infekcja przeglądarki celem wyświetlania reklam",
-              en: "Infection of the browser to display advertisements"
+              en: "Infection of the browser to display advertisements",
             },
             isCorrect: false,
           },
@@ -41,9 +41,9 @@ export const quizesData = [
       {
         question: {
           pl: "Częste wykonywanie kopii zapasowej danych nie chroni całkowicie przed konsekwencjami ransomware",
-          en: "Frequent data backup does not completely protect against the consequences of ransomware"
+          en: "Frequent data backup does not completely protect against the consequences of ransomware",
         },
-          answers: [
+        answers: [
           {
             text: {
               pl: "Prawda",
@@ -54,43 +54,43 @@ export const quizesData = [
           {
             text: {
               pl: "Fałsz",
-              en: "False"
+              en: "False",
             },
             isCorrect: false,
-          }
+          },
         ],
       },
       {
         question: {
           pl: "Którym z wymienionych sposobów, ransomware zazwyczaj NIE DOSTAJE SIĘ do urządzenia?",
-          en: "Which of the following ways does ransomware usually NOT infects the device?"
+          en: "Which of the following ways does ransomware usually NOT infects the device?",
         },
         answers: [
           {
             text: {
               pl: "Zdalne wykonanie kodu",
-              en: "Remote code execution"
+              en: "Remote code execution",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Maile phishingowe",
-              en: "Phishing mails"
+              en: "Phishing mails",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Zdalny dostęp",
-              en: "Remote access"
+              en: "Remote access",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Sieć Wi-Fi",
-              en: "Wi-Fi network"
+              en: "Wi-Fi network",
             },
             isCorrect: true,
           },
@@ -99,45 +99,45 @@ export const quizesData = [
       {
         question: {
           pl: "W przypadku infekcji ransomware, pierwszą rzeczą, którą należy zrobić, jest zapłata okupu",
-          en: "In the case of a ransomware infection, the first thing to do is pay the ransom"
+          en: "In the case of a ransomware infection, the first thing to do is pay the ransom",
         },
         answers: [
           {
             text: {
               pl: "Prawda",
-              en: "True"
+              en: "True",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Fałsz",
-              en: "False"
+              en: "False",
             },
             isCorrect: true,
-          }
+          },
         ],
       },
       {
         question: {
           pl: "Używanie dobrego antywirusowa kompletnie eliminuje zagrożenie ransomware",
-          en: "Using a good antivirus program completely eliminates the threat of ransomware"
+          en: "Using a good antivirus program completely eliminates the threat of ransomware",
         },
         answers: [
           {
             text: {
               pl: "Prawda",
-              en: "True"
+              en: "True",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Fałsz",
-              en: "False"
+              en: "False",
             },
             isCorrect: true,
-          }
+          },
         ],
       },
     ],
@@ -148,34 +148,34 @@ export const quizesData = [
       {
         question: {
           pl: "Na czym polega atak SQL Injection?",
-          en: "What is an SQL Injection attack?"
+          en: "What is an SQL Injection attack?",
         },
         answers: [
           {
             text: {
               pl: "Na uruchomieniu na urządzeniu końcowym ofiary programu, który zaszyfruje wszystkie jej dane",
-              en: "Running a program on the victim's terminal device that encrypts all their data"
+              en: "Running a program on the victim's terminal device that encrypts all their data",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Na przekierowaniu użytkowników sieci Wi-Fi do spreparowanej strony internetowej",
-              en: "Redirecting Wi-Fi users to a crafted website"
+              en: "Redirecting Wi-Fi users to a crafted website",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Na całkowitym odebraniu dostępu do strony internetowej ofiary",
-              en: "Complete denial of access to the victim's website"
+              en: "Complete denial of access to the victim's website",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Na znalezieniu luki w oprogramowaniu i wykorzystaniu jej",
-              en: "Finding a vulnerability in software and exploiting it"
+              en: "Finding a vulnerability in software and exploiting it",
             },
             isCorrect: true,
           },
@@ -184,20 +184,20 @@ export const quizesData = [
       {
         question: {
           pl: "Atak SQL Injection nie ma związku z bazami danych",
-          en: "SQL Injection attack is not related to databases"
+          en: "SQL Injection attack is not related to databases",
         },
         answers: [
           {
             text: {
               pl: "Prawda",
-              en: "True"
+              en: "True",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Fałsz",
-              en: "False"
+              en: "False",
             },
             isCorrect: true,
           },
@@ -206,34 +206,34 @@ export const quizesData = [
       {
         question: {
           pl: "Jakie narzędzie znacznie ułatwia atakującemu znalezienie podatności?",
-          en: "Which tool makes it much easier for an attacker to find vulnerabilities?"
+          en: "Which tool makes it much easier for an attacker to find vulnerabilities?",
         },
         answers: [
           {
             text: {
               pl: "Serwer proxy",
-              en: "Proxy server"
+              en: "Proxy server",
             },
             isCorrect: true,
           },
           {
             text: {
               pl: "Keylogger",
-              en: "Keylogger"
+              en: "Keylogger",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Skanowanie portów",
-              en: "Port scanning"
+              en: "Port scanning",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Blokada usług",
-              en: "Denial of Service"
+              en: "Denial of Service",
             },
             isCorrect: false,
           },
@@ -242,7 +242,7 @@ export const quizesData = [
       {
         question: {
           pl: "Jakie polecenie języka SQL wykonuje zapytanie zwracające dane z bazy?",
-          en: "What SQL statement executes a query that returns data from the database?"
+          en: "What SQL statement executes a query that returns data from the database?",
         },
         answers: [
           {
@@ -255,21 +255,21 @@ export const quizesData = [
           {
             text: {
               pl: "UPDATE",
-              en: "UPDATE"
+              en: "UPDATE",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "SELECT",
-              en: "SELECT"
+              en: "SELECT",
             },
             isCorrect: true,
           },
           {
             text: {
               pl: "ALTER TABLE",
-              en: "ALTER TABLE"
+              en: "ALTER TABLE",
             },
             isCorrect: false,
           },
@@ -278,34 +278,34 @@ export const quizesData = [
       {
         question: {
           pl: "Jakie są najlepsze praktyki na ochronę przed atakami SQL Injection",
-          en: "What are the best practices for protection against SQL Injection attacks"
+          en: "What are the best practices for protection against SQL Injection attacks",
         },
         answers: [
           {
             text: {
               pl: "Instalacja antywirusa i monitorowanie aktywności sieciowej na urządzeniu",
-              en: "Installing antivirus and monitoring network activity on the device"
+              en: "Installing antivirus and monitoring network activity on the device",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Dokładne filtrowanie i czyszczenie danych przesyłanych do bazy danych od użytkownika",
-              en: "Thorough filtering and cleaning of data sent to the database from the user"
+              en: "Thorough filtering and cleaning of data sent to the database from the user",
             },
             isCorrect: true,
           },
           {
             text: {
               pl: "Uniemożliwienie w formularzu interfejsu użytkownika przesłania znaków specjalnych",
-              en: "Prevent special characters from being transmitted in the user interface form"
+              en: "Prevent special characters from being transmitted in the user interface form",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Stosowanie zasady ograniczonego zaufania",
-              en: "Application of the principle of limited trust"
+              en: "Application of the principle of limited trust",
             },
             isCorrect: false,
           },
@@ -319,34 +319,34 @@ export const quizesData = [
       {
         question: {
           pl: "Który z poniższych NIE ZALICZA SIĘ do ataków phishingowych?",
-          en: "Which of the following DOES NOT qualify as a phishing attack?"
+          en: "Which of the following DOES NOT qualify as a phishing attack?",
         },
         answers: [
           {
             text: {
               pl: "Pharming",
-              en: "Pharming"
+              en: "Pharming",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Phishing mailowy",
-              en: "Mail phishing"
+              en: "Mail phishing",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Data phishing",
-              en: "Data phishing"
+              en: "Data phishing",
             },
             isCorrect: true,
           },
           {
             text: {
               pl: "Spear phishing",
-              en: "Spear phishing"
+              en: "Spear phishing",
             },
             isCorrect: false,
           },
@@ -355,34 +355,34 @@ export const quizesData = [
       {
         question: {
           pl: "Jaka grupa osób może paść ofiarą ataków phishingowych?",
-          en: "What group of people can fall victim to phishing attacks?"
+          en: "What group of people can fall victim to phishing attacks?",
         },
         answers: [
           {
             text: {
               pl: "Pracownicy korporacji",
-              en: "Corporate employees"
+              en: "Corporate employees",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Zwykli użytkownicy",
-              en: "Regular users"
+              en: "Regular users",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Osoby nie korzystające z internetu",
-              en: "People who do not use the Internet"
+              en: "People who do not use the Internet",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Wszystkie odpowiedzi są prawidłowe",
-              en: "All answers are correct"
+              en: "All answers are correct",
             },
             isCorrect: true,
           },
@@ -391,20 +391,20 @@ export const quizesData = [
       {
         question: {
           pl: "Czy atakujący może podszyć się pod dowolnego nadawcę SMS?",
-          en: "Can attacker impersonate any SMS sender?"
+          en: "Can attacker impersonate any SMS sender?",
         },
         answers: [
           {
             text: {
               pl: "Prawda",
-              en: "True"
+              en: "True",
             },
             isCorrect: true,
           },
           {
             text: {
               pl: "Fałsz",
-              en: "False"
+              en: "False",
             },
             isCorrect: false,
           },
@@ -413,50 +413,59 @@ export const quizesData = [
       {
         question: {
           pl: "Najbardziej podatnym elementem ataku phishingowego jest...",
-          en: "The most vulnerable element of a phishing attack is..."
+          en: "The most vulnerable element of a phishing attack is...",
         },
         answers: [
           {
             text: {
               pl: "Przeglądarka internetowa",
-              en: "Web browser"
+              en: "Web browser",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "System operacyjny",
-              en: "Operating system"
+              en: "Operating system",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Filtr antyspamowy",
-              en: "Spam filter"
+              en: "Spam filter",
             },
             isCorrect: false,
           },
           {
             text: {
               pl: "Człowiek",
-              en: "Human"
+              en: "Human",
             },
             isCorrect: true,
           },
         ],
       },
       {
-        question: "Używanie tych samych danych logowania dla każdej witryny to dobry pomysł.",
+        question: {
+          pl: "Używanie tych samych danych logowania dla każdej witryny to dobry pomysł.",
+          en: "Using the same login details for each site is a good idea.",
+        },
         answers: [
           {
-            text: "Prawda",
+            text: {
+              pl: "Prawda",
+              en: "True",
+            },
             isCorrect: false,
           },
           {
-            text: "Fałsz",
+            text: {
+              pl: "Fałsz",
+              en: "False",
+            },
             isCorrect: true,
-          }
+          },
         ],
       },
     ],
@@ -465,100 +474,169 @@ export const quizesData = [
     courseLink: "dos",
     items: [
       {
-        question: "Co ma na celu atak DoS?",
+        question: {
+          pl: "Co ma na celu atak DoS?",
+          en: "What is the purpose of a DoS attack?",
+        },
         answers: [
           {
-            text: "Wykradnięcie danych ofiary",
+            text: {
+              pl: "Wykradnięcie danych ofiary",
+              en: "Stealing the victim's data",
+            },
             isCorrect: false,
           },
           {
-            text: "Wstrzyknięcie złośliwego skryptu",
+            text: {
+              pl: "Wstrzyknięcie złośliwego skryptu",
+              en: "Injection of a malicious script",
+            },
             isCorrect: false,
           },
           {
-            text: "Przechwycenie treści odwiedzanych stron internetowych przez ofiarę",
+            text: {
+              pl: "Przechwycenie treści odwiedzanych stron internetowych przez ofiarę",
+              en: "Interception of the content of websites visited by the victim",
+            },
             isCorrect: false,
           },
           {
-            text: "Zablokowanie dostępu do podstawowych funkcjonalności strony",
+            text: {
+              pl: "Zablokowanie dostępu do podstawowych funkcjonalności strony",
+              en: "Blocking access to basic functionality of the website",
+            },
             isCorrect: true,
           },
         ],
       },
       {
-        question: "Czym różni się atak DDoS od ataku DoS?",
+        question: {
+          pl: "Czym różni się atak DDoS od ataku DoS?",
+          en: "What is the difference between a DDoS attack and a DoS attack?",
+        },
         answers: [
           {
-            text: "Wieloma źródłami ataku",
+            text: {
+              pl: "Wieloma źródłami ataku",
+              en: "Multiple sources of attack",
+            },
             isCorrect: true,
           },
           {
-            text: "Technologią wykorzystaną w ataku",
+            text: {
+              pl: "Technologią wykorzystaną w ataku",
+              en: "The tools used in the attack",
+            },
             isCorrect: false,
           },
           {
-            text: "Celem ataku",
+            text: {
+              pl: "Celem ataku",
+              en: "Attack target",
+            },
             isCorrect: false,
           },
           {
-            text: "Wszystkie odpowiedzi są prawidłowe",
+            text: {
+              pl: "Wszystkie odpowiedzi są prawidłowe",
+              en: "All answers are correct",
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Który z typów ataku DDoS NIE JEST prawidłowy?",
+        question: {
+          pl: "Który z typów ataku DDoS NIE JEST prawidłowy?",
+          en: "Which type of DDoS attack is NOT correct?",
+        },
         answers: [
           {
-            text: "Atak wolumetryczny",
+            text: {
+              pl: "Atak wolumetryczny",
+              en: "Volumetric attack",
+            },
             isCorrect: false,
           },
           {
-            text: "Atak TCP",
+            text: {
+              pl: "Atak TCP",
+              en: "TCP Attack",
+            },
             isCorrect: false,
           },
           {
-            text: "Atak typu Reflected",
+            text: {
+              pl: "Atak typu Reflected",
+              en: "Reflected Attack",
+            },
             isCorrect: true,
           },
           {
-            text: "Atak fragmentacyjny",
+            text: {
+              pl: "Atak fragmentacyjny",
+              en: "Fragmentation attack",
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Efekty ataku DDoS mogą być zauważalne po chwili od jego rozpoczęcia",
+        question: {
+          pl: "Efekty ataku DDoS mogą być zauważalne po chwili od jego rozpoczęcia",
+          en: "The effects of a DDoS attack may be noticeable a moment after it starts",
+        },
         answers: [
           {
-            text: "Prawda",
+            text: {
+              pl: "Prawda",
+              en: "True",
+            },
             isCorrect: true,
           },
           {
-            text: "Fałsz",
+            text: {
+              pl: "Fałsz",
+              en: "False",
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Która z poniższych opcji może być wykorzystana celem przeciwdziałania atakom typu DDoS?",
+        question: {
+          pl: "Która z poniższych opcji może być wykorzystana celem przeciwdziałania atakom typu DDoS?",
+          en: "Which of the following options can be used to counter DDoS attacks?",
+        },
         answers: [
           {
-            text: "Używanie zapór ogniowych",
+            text: {
+              pl: "Używanie zapór ogniowych",
+              en: "Using firewalls",
+            },
             isCorrect: false,
           },
           {
-            text: "Migracja infrastruktury do chmury publicznej",
+            text: {
+              pl: "Migracja infrastruktury do chmury publicznej",
+              en: "Migrating infrastructure to the public cloud",
+            },
             isCorrect: false,
           },
           {
-            text: "Mechanizm CAPTCHA",
+            text: {
+              pl: "Mechanizm CAPTCHA",
+              en: "CAPTCHA",
+            },
             isCorrect: false,
           },
           {
-            text: "Wszystkie odpowiedzi są prawidłowe",
+            text: {
+              pl: "Wszystkie odpowiedzi są prawidłowe",
+              en: "All answers are correct",
+            },
             isCorrect: true,
-          }
+          },
         ],
       },
     ],
@@ -567,100 +645,169 @@ export const quizesData = [
     courseLink: "keylogger",
     items: [
       {
-        question: "Czym jest keylogger?",
+        question: {
+          pl: "Czym jest keylogger?",
+          en: "What is a keylogger",
+        },
         answers: [
           {
-            text: "Narzędziem lub oprogramowaniem rejestrującym aktywność klawiatury",
+            text: {
+              pl: "Narzędziem lub oprogramowaniem rejestrującym aktywność klawiatury",
+              en: "A tool or software that records keyboard activity",
+            },
             isCorrect: true,
           },
           {
-            text: "Popularnym złośliwym skryptem",
+            text: {
+              pl: "Popularnym złośliwym skryptem",
+              en: "A popular malicious script",
+            },
             isCorrect: false,
           },
           {
-            text: "Mechanizmem blokującym dostęp do wybranych usług",
+            text: {
+              pl: "Mechanizmem blokującym dostęp do wybranych usług",
+              en: "Mechanism for blocking access to selected services",
+            },
             isCorrect: false,
           },
           {
-            text: "Wirusem, który przekierowuje użytkownika na strony phishingowe",
+            text: {
+              pl: "Wirusem, który przekierowuje użytkownika na strony phishingowe",
+              en: "A virus that redirects the user to phishing sites",
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Urządzenie może zostać zainfekowane keyloggerem poprzez...",
+        question: {
+          pl: "Urządzenie może zostać zainfekowane keyloggerem poprzez...",
+          en: "The device can be infected with a keylogger by...",
+        },
         answers: [
           {
-            text: "Atak XSS",
+            text: {
+              pl: "Atak XSS",
+              en: "XSS Attack",
+            },
             isCorrect: false,
           },
           {
-            text: "Fizyczny dostęp do urządzenia",
+            text: {
+              pl: "Fizyczny dostęp do urządzenia",
+              en: "Physical access to the device",
+            },
             isCorrect: false,
           },
           {
-            text: "Maile phishingowe",
+            text: {
+              pl: "Maile phishingowe",
+              en: "Phishing mails",
+            },
             isCorrect: false,
           },
           {
-            text: "Wszystkie odpowiedzi są prawidłowe",
+            text: {
+              pl: "Wszystkie odpowiedzi są prawidłowe",
+              en: "All answers are correct",
+            },
             isCorrect: true,
           },
         ],
       },
       {
-        question: "Na jakie rodzaje można podzielić keyloggery?",
+        question: {
+          pl: "Na jakie rodzaje można podzielić keyloggery?",
+          en: "What types of keyloggers can be divided into?",
+        },
         answers: [
           {
-            text: "Tylko sprzętowe",
+            text: {
+              pl: "Tylko sprzętowe",
+              en: "Only hardware",
+            },
             isCorrect: false,
           },
           {
-            text: "Sprzętowe i programowe",
+            text: {
+              pl: "Sprzętowe i programowe",
+              en: "Hardware and software",
+            },
             isCorrect: true,
           },
           {
-            text: "Tylko programowe",
+            text: {
+              pl: "Tylko programowe",
+              en: "Only software",
+            },
             isCorrect: false,
           },
           {
-            text: "Sprzętowe, programowe i sieciowe",
+            text: {
+              pl: "Sprzętowe, programowe i sieciowe",
+              en: "Hardware, software and network",
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Używanie antywirusa w całości eliminuje zagrożenie ataku keyloggerem sprzętowym",
+        question: {
+          pl: "Używanie antywirusa w całości eliminuje zagrożenie ataku keyloggerem sprzętowym",
+          en: "Using antivirus completely eliminates the threat of a hardware keylogger attack",
+        },
         answers: [
           {
-            text: "Prawda",
+            text: {
+              pl: "Prawda",
+              en: "True",
+            },
             isCorrect: false,
           },
           {
-            text: "Fałsz",
+            text: {
+              pl: "Fałsz",
+              en: "False",
+            },
             isCorrect: true,
           },
         ],
       },
       {
-        question: "Która z poniższych opcji pomaga przeciwdziałać skutkom infekcji keyloggerem?",
+        question: {
+          pl: "Która z poniższych opcji pomaga przeciwdziałać skutkom infekcji keyloggerem?",
+          en: "Which of the following helps counteract the effects of a keylogger infection?",
+        },
         answers: [
           {
-            text: "Używanie uwierzytelniania dwuskładnikowego (2FA)",
+            text: {
+              pl: "Używanie uwierzytelniania dwuskładnikowego (2FA)",
+              en: "Using two-factor authentication (2FA)",
+            },
             isCorrect: true,
           },
           {
-            text: "Formatowanie dysku urządzenia",
+            text: {
+              pl: "Formatowanie dysku urządzenia",
+              en: "Formatting the device disk",
+            },
             isCorrect: false,
           },
           {
-            text: "Usunięcie złośliwego oprogramowania",
+            text: {
+              pl: "Usunięcie złośliwego oprogramowania",
+              en: "Removal of malware",
+            },
             isCorrect: false,
           },
           {
-            text: "Wszystkie odpowiedzi są prawidłowe",
+            text: {
+              pl: "Wszystkie odpowiedzi są prawidłowe",
+              en: "All answers are correct",
+            },
             isCorrect: false,
-          }
+          },
         ],
       },
     ],
@@ -669,102 +816,171 @@ export const quizesData = [
     courseLink: "xss",
     items: [
       {
-        question: "Na czym polega atak XSS?",
+        question: {
+          pl: "Na czym polega atak XSS?",
+          en: "How does an XSS attack look like?",
+        },
         answers: [
           {
-            text: "Na umieszczeniu złośliwego skryptu w bazie danych",
+            text: {
+              pl: "Na umieszczeniu złośliwego skryptu w bazie danych",
+              en: "Placing a malicious script in the database",
+            },
             isCorrect: false,
           },
           {
-            text: "Na uzyskaniu nieautoryzowanego dostępu do serwisu internetowego",
+            text: {
+              pl: "Na uzyskaniu nieautoryzowanego dostępu do serwisu internetowego",
+              en: "Gaining unauthorised access to the website",
+            },
             isCorrect: false,
           },
           {
-            text: "Na umieszczeniu złośliwego skryptu w zawartości strony internetowej",
+            text: {
+              pl: "Na umieszczeniu złośliwego skryptu w zawartości strony internetowej",
+              en: "Inserting a malicious script into the content of a website",
+            },
             isCorrect: false,
           },
           {
-            text: "Wszystkie odpowiedzi są prawidłowe",
+            text: {
+              pl: "Wszystkie odpowiedzi są prawidłowe",
+              en: "All answers are correct",
+            },
             isCorrect: true,
           },
         ],
       },
       {
-        question: "Typem ataku XSS NIE JEST:",
+        question: {
+          pl: "Typem ataku XSS NIE JEST:",
+          en: "A type of XSS attack IS NOT",
+        },
         answers: [
           {
-            text: "Volumetric XSS",
+            text: {
+              pl: "XSS wolumetryczny",
+              en: "Volmetric XSS",
+            },
             isCorrect: true,
           },
           {
-            text: "Reflected XSS",
+            text: {
+              pl: "Reflected XSS",
+              en: "Reflected XSS",
+            },
             isCorrect: false,
           },
           {
-            text: "Dom-based XSS",
+            text: {
+              pl: "Dom-based XSS",
+              en: "Dom-based XSS",
+            },
             isCorrect: false,
           },
           {
-            text: "Stored XSS",
+            text: {
+              pl: "Stored XSS",
+              en: "Stored XSS",
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Atak XSS może zmodyfikować zawartość podatnej strony internetowej",
+        question: {
+          pl: "Atak XSS może zmodyfikować zawartość podatnej strony internetowej",
+          en: "An XSS attack can modify the content of a vulnerable website",
+        },
         answers: [
           {
-            text: "Prawda",
+            text: {
+              pl: "Prawda",
+              en: "True",
+            },
             isCorrect: true,
           },
           {
-            text: "Fałsz",
-            isCorrect: false,
-          }
-        ],
-      },
-      {
-        question: "Jaki rodzaj strony ma największe prawdopodobieństwo na bycie podatnym na atak XSS?",
-        answers: [
-          {
-            text: "Strona umożliwiająca przesyłanie i oglądanie wideo",
-            isCorrect: false,
-          },
-          {
-            text: "Blog, na którym można dodawać wpisy i komentarze",
-            isCorrect: true,
-          },
-          {
-            text: "Strona przedstawiająca usługi oferowane przez firmę",
-            isCorrect: false,
-          },
-          {
-            text: "Gra przeglądarkowa",
+            text: {
+              pl: "Fałsz",
+              en: "False",
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Która z poniższych opcji pozwala programistom na niwelowanie prawdopodobieństwa podatności strony na atak XSS?",
+        question: {
+          pl: "Jaki rodzaj strony ma największe prawdopodobieństwo na bycie podatnym na atak XSS?",
+          en: "What type of site is most likely to be vulnerable to an XSS attack?",
+        },
         answers: [
           {
-            text: "Używanie popularnych szkieletów oprogramowania (frameworków) w procesie tworzenia serwisu",
+            text: {
+              pl: "Strona umożliwiająca przesyłanie i oglądanie wideo",
+              en: "Website for uploading and watching video",
+            },
             isCorrect: false,
           },
           {
-            text: "Stosowanie odpowiedniej polityki CORS",
-            isCorrect: false,
-          },
-          {
-            text: "Walidacja i czyszczenie danych wejściowych",
+            text: {
+              pl: "Blog, na którym można dodawać wpisy i komentarze",
+              en: "A blog where you can add posts and comments",
+            },
             isCorrect: true,
           },
           {
-            text: "Wszystkie odpowiedzi są prawidłowe",
+            text: {
+              pl: "Strona przedstawiająca usługi oferowane przez firmę",
+              en: "Website presenting the services offered by the company",
+            },
             isCorrect: false,
-          }
+          },
+          {
+            text: {
+              pl: "Gra przeglądarkowa",
+              en: "Browser game",
+            },
+            isCorrect: false,
+          },
+        ],
+      },
+      {
+        question: {
+          pl: "Która z poniższych opcji pozwala programistom na niwelowanie prawdopodobieństwa podatności strony na atak XSS?",
+          en: "Which of the following options allows developers to mitigate the likelihood of a site being vulnerable to an XSS attack?",
+        },
+        answers: [
+          {
+            text: {
+              pl: "Używanie popularnych szkieletów oprogramowania (frameworków) w procesie tworzenia serwisu",
+              en: "Using popular software frameworks in the service development process",
+            },
+            isCorrect: false,
+          },
+          {
+            text: {
+              pl: "Stosowanie odpowiedniej polityki CORS",
+              en: "Use of an appropriate CORS policy",
+            },
+            isCorrect: false,
+          },
+          {
+            text: {
+              pl: "Walidacja i czyszczenie danych wejściowych",
+              en: "Validation and cleaning of input data",
+            },
+            isCorrect: true,
+          },
+          {
+            text: {
+              pl: "Wszystkie odpowiedzi są prawidłowe",
+              en: "All answers are correct",
+            },
+            isCorrect: false,
+          },
         ],
       },
     ],
-  }
+  },
 ];

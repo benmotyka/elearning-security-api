@@ -10,7 +10,6 @@ import verifyToken from "./middleware/verifyToken.js";
 
 import cors from "cors"
 import http from "http"
-import seedQuizes from "./seeders/quizes/quizes.js";
 dotenv.config();
 const app = express();
 
@@ -31,7 +30,6 @@ app.use(
   })
 );
 
-// seedQuizes()
 const port = process.env.PORT || 3000;
 
 connectDatabase()
