@@ -18,7 +18,7 @@ export const quizesData = [
           {
             text: {
               pl: "Usunięcie wszystkich danych na komputerze ofiary",
-              en: "Deletion of all data on the victim's computer"
+              en: "Wiping data on the victim's computer"
             },
             isCorrect: false,
           },
@@ -119,7 +119,10 @@ export const quizesData = [
         ],
       },
       {
-        question: "Using a good antivirus program completely eliminates the threat of ransomware",
+        question: {
+          pl: "Używanie dobrego antywirusowa kompletnie eliminuje zagrożenie ransomware",
+          en: "Using a good antivirus program completely eliminates the threat of ransomware"
+        },
         answers: [
           {
             text: {
@@ -143,98 +146,167 @@ export const quizesData = [
     courseLink: "sql-injection",
     items: [
       {
-        question: "Na czym polega atak SQL Injection?",
+        question: {
+          pl: "Na czym polega atak SQL Injection?",
+          en: "What is an SQL Injection attack?"
+        },
         answers: [
           {
-            text: "Na uruchomieniu na urządzeniu końcowym ofiary programu, który zaszyfruje wszystkie jej dane",
+            text: {
+              pl: "Na uruchomieniu na urządzeniu końcowym ofiary programu, który zaszyfruje wszystkie jej dane",
+              en: "Running a program on the victim's terminal device that encrypts all their data"
+            },
             isCorrect: false,
           },
           {
-            text: "Na przekierowaniu użytkowników sieci Wi-Fi do spreparowanej strony internetowej",
+            text: {
+              pl: "Na przekierowaniu użytkowników sieci Wi-Fi do spreparowanej strony internetowej",
+              en: "Redirecting Wi-Fi users to a crafted website"
+            },
             isCorrect: false,
           },
           {
-            text: "Na całkowitym odebraniu dostępu do strony internetowej ofiary",
+            text: {
+              pl: "Na całkowitym odebraniu dostępu do strony internetowej ofiary",
+              en: "Complete denial of access to the victim's website"
+            },
             isCorrect: false,
           },
           {
-            text: "Na znalezieniu luki w oprogramowaniu i wykorzystaniu jej",
+            text: {
+              pl: "Na znalezieniu luki w oprogramowaniu i wykorzystaniu jej",
+              en: "Finding a vulnerability in software and exploiting it"
+            },
             isCorrect: true,
           },
         ],
       },
       {
-        question: "Atak SQL Injection nie ma związku z bazami danych",
+        question: {
+          pl: "Atak SQL Injection nie ma związku z bazami danych",
+          en: "SQL Injection attack is not related to databases"
+        },
         answers: [
           {
-            text: "Prawda",
+            text: {
+              pl: "Prawda",
+              en: "True"
+            },
             isCorrect: false,
           },
           {
-            text: "Fałsz",
+            text: {
+              pl: "Fałsz",
+              en: "False"
+            },
             isCorrect: true,
           },
         ],
       },
       {
-        question: "Jakie narzędzie znacznie ułatwia atakującemu znalezienie podatności?",
+        question: {
+          pl: "Jakie narzędzie znacznie ułatwia atakującemu znalezienie podatności?",
+          en: "Which tool makes it much easier for an attacker to find vulnerabilities?"
+        },
         answers: [
           {
-            text: "Serwer proxy",
+            text: {
+              pl: "Serwer proxy",
+              en: "Proxy server"
+            },
             isCorrect: true,
           },
           {
-            text: "Keylogger",
+            text: {
+              pl: "Keylogger",
+              en: "Keylogger"
+            },
             isCorrect: false,
           },
           {
-            text: "Skanowanie portów",
+            text: {
+              pl: "Skanowanie portów",
+              en: "Port scanning"
+            },
             isCorrect: false,
           },
           {
-            text: "Blokada usług",
+            text: {
+              pl: "Blokada usług",
+              en: "Denial of Service"
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Jakie polecenie języka SQL wykonuje zapytanie zwracające dane z bazy?",
+        question: {
+          pl: "Jakie polecenie języka SQL wykonuje zapytanie zwracające dane z bazy?",
+          en: "What SQL statement executes a query that returns data from the database?"
+        },
         answers: [
           {
-            text: "ALTER DATABASE",
+            text: {
+              pl: "ALTER DATABASE",
+              en: "ALTER DATABASE",
+            },
             isCorrect: false,
           },
           {
-            text: "UPDATE",
+            text: {
+              pl: "UPDATE",
+              en: "UPDATE"
+            },
             isCorrect: false,
           },
           {
-            text: "SELECT",
+            text: {
+              pl: "SELECT",
+              en: "SELECT"
+            },
             isCorrect: true,
           },
           {
-            text: "ALTER TABLE",
+            text: {
+              pl: "ALTER TABLE",
+              en: "ALTER TABLE"
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Jakie są najlepsze praktyki na ochronę przed atakami SQL Injection",
+        question: {
+          pl: "Jakie są najlepsze praktyki na ochronę przed atakami SQL Injection",
+          en: "What are the best practices for protection against SQL Injection attacks"
+        },
         answers: [
           {
-            text: "Instalacja antywirusa i monitorowanie aktywności sieciowej na urządzeniu",
+            text: {
+              pl: "Instalacja antywirusa i monitorowanie aktywności sieciowej na urządzeniu",
+              en: "Installing antivirus and monitoring network activity on the device"
+            },
             isCorrect: false,
           },
           {
-            text: "Dokładne filtrowanie i czyszczenie danych przesyłanych do bazy danych od użytkownika",
+            text: {
+              pl: "Dokładne filtrowanie i czyszczenie danych przesyłanych do bazy danych od użytkownika",
+              en: "Thorough filtering and cleaning of data sent to the database from the user"
+            },
             isCorrect: true,
           },
           {
-            text: "Uniemożliwienie w formularzu interfejsu użytkownika przesłania znaków specjalnych",
+            text: {
+              pl: "Uniemożliwienie w formularzu interfejsu użytkownika przesłania znaków specjalnych",
+              en: "Prevent special characters from being transmitted in the user interface form"
+            },
             isCorrect: false,
           },
           {
-            text: "Stosowanie zasady ograniczonego zaufania",
+            text: {
+              pl: "Stosowanie zasady ograniczonego zaufania",
+              en: "Application of the principle of limited trust"
+            },
             isCorrect: false,
           },
         ],
@@ -245,77 +317,131 @@ export const quizesData = [
     courseLink: "phishing",
     items: [
       {
-        question: "Który z poniższych NIE ZALICZA SIĘ do ataków phishingowych?",
+        question: {
+          pl: "Który z poniższych NIE ZALICZA SIĘ do ataków phishingowych?",
+          en: "Which of the following DOES NOT qualify as a phishing attack?"
+        },
         answers: [
           {
-            text: "Pharming",
+            text: {
+              pl: "Pharming",
+              en: "Pharming"
+            },
             isCorrect: false,
           },
           {
-            text: "Phishing mailowy",
+            text: {
+              pl: "Phishing mailowy",
+              en: "Mail phishing"
+            },
             isCorrect: false,
           },
           {
-            text: "Data phishing",
+            text: {
+              pl: "Data phishing",
+              en: "Data phishing"
+            },
             isCorrect: true,
           },
           {
-            text: "Spear phishing",
+            text: {
+              pl: "Spear phishing",
+              en: "Spear phishing"
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Jaka grupa osób może paść ofiarą ataków phishingowych?",
+        question: {
+          pl: "Jaka grupa osób może paść ofiarą ataków phishingowych?",
+          en: "What group of people can fall victim to phishing attacks?"
+        },
         answers: [
           {
-            text: "Pracownicy korporacji",
+            text: {
+              pl: "Pracownicy korporacji",
+              en: "Corporate employees"
+            },
             isCorrect: false,
           },
           {
-            text: "Zwykli użytkownicy",
+            text: {
+              pl: "Zwykli użytkownicy",
+              en: "Regular users"
+            },
             isCorrect: false,
           },
           {
-            text: "Osoby nie korzystające z internetu",
+            text: {
+              pl: "Osoby nie korzystające z internetu",
+              en: "People who do not use the Internet"
+            },
             isCorrect: false,
           },
           {
-            text: "Wszystkie odpowiedzi są prawidłowe",
+            text: {
+              pl: "Wszystkie odpowiedzi są prawidłowe",
+              en: "All answers are correct"
+            },
             isCorrect: true,
           },
         ],
       },
       {
-        question: "Czy atakujący może podszyć się pod dowolnego nadawcę SMS?",
+        question: {
+          pl: "Czy atakujący może podszyć się pod dowolnego nadawcę SMS?",
+          en: "Can attacker impersonate any SMS sender?"
+        },
         answers: [
           {
-            text: "Prawda",
+            text: {
+              pl: "Prawda",
+              en: "True"
+            },
             isCorrect: true,
           },
           {
-            text: "Fałsz",
+            text: {
+              pl: "Fałsz",
+              en: "False"
+            },
             isCorrect: false,
           },
         ],
       },
       {
-        question: "Najbardziej podatnym elementem ataku phishingowego jest...",
+        question: {
+          pl: "Najbardziej podatnym elementem ataku phishingowego jest...",
+          en: "The most vulnerable element of a phishing attack is..."
+        },
         answers: [
           {
-            text: "Przeglądarka internetowa",
+            text: {
+              pl: "Przeglądarka internetowa",
+              en: "Web browser"
+            },
             isCorrect: false,
           },
           {
-            text: "System operacyjny",
+            text: {
+              pl: "System operacyjny",
+              en: "Operating system"
+            },
             isCorrect: false,
           },
           {
-            text: "Filtr antyspamowy",
+            text: {
+              pl: "Filtr antyspamowy",
+              en: "Spam filter"
+            },
             isCorrect: false,
           },
           {
-            text: "Człowiek",
+            text: {
+              pl: "Człowiek",
+              en: "Human"
+            },
             isCorrect: true,
           },
         ],
