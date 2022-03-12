@@ -45,7 +45,7 @@ type QuizItem {
 }
 
 type QuizSummaryItem {
-    question: String!
+    question: LanguageType!
     answers: [QuizSummaryAnswer]!
 }
 

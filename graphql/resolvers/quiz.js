@@ -56,9 +56,9 @@ export default {
       const userAnswers = JSON.parse(args.userAnswers)
       quiz.items.forEach(quizItem => {
         userAnswers.forEach(userItem => {
-          if(quizItem.question === userItem.question) {
+            if(Object.values(userItem.question).every(item => Object.values(quizItem.question).includes(item))) {
             quizItem.answers.forEach(quizAnswer => {
-              if((quizAnswer.text === userItem.answer.text) && quizAnswer.isCorrect) userScore++;
+              if((Object.values(userItem.answer.text).every(item => Object.values(quizAnswer.text).includes(item))) && quizAnswer.isCorrect) userScore++;
             })
           }
         })
