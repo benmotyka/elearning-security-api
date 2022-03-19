@@ -14,6 +14,14 @@ const articleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  categories:{
+    type: Object,
+    required: false,
+  },
+  urls: {
+    type: Array,
+    required: false,
+  }
 });
 
 articleSchema.plugin(autopopulate);

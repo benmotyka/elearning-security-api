@@ -142,12 +142,20 @@ type LanguageType {
     en: String
 }
 
+
+type LanguageArrayType {
+    pl: [String]!
+    en: [String]!
+}
+
 type Article {
     _id: ID!
     header: String!
     description: String!
     link: String!
     language: String!
+    categories: LanguageArrayType
+    urls: [String!]
 }
 
 type AccountLevel {

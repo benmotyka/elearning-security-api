@@ -9,6 +9,8 @@ const seedArticles = async () => {
         header: article.header,
         description: article.description,
         link: article.link,
+        categories: article.categories,
+        urls: article.urls
       }).save();
       console.log(`${newArticle.link} article added!`);
     } catch (error) {
