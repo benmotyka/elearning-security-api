@@ -63,7 +63,7 @@ export const quizesData = [
       {
         question: {
           pl: "Którym z wymienionych sposobów, ransomware zazwyczaj NIE DOSTAJE SIĘ do urządzenia?",
-          en: "Which of the following ways does ransomware usually NOT infects the device?",
+          en: "Which of the following ways ransomware usually DOES NOT infect the device?",
         },
         answers: [
           {

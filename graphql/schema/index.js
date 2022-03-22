@@ -154,8 +154,8 @@ type Article {
     description: String!
     link: String!
     language: String!
-    categories: LanguageArrayType
-    urls: [String!]
+    categories: LanguageArrayType!
+    urls: LanguageArrayType!
 }
 
 type AccountLevel {

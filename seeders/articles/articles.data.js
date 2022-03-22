@@ -10,10 +10,13 @@ export const articlesData = [
     },
     link: "phishing",
     categories: {
-      pl: ["Socjotechnika", "Kradzież danych"],
-      en: ["Social engineering", "Data theft"]
+      pl: ["Inżynieria społeczna", "Kradzież danych", "Fałszywa strona", "Manipulacja"],
+      en: ["Social engineering", "Data theft", "Fake website", "Manipulation"]
     },
-    urls: ["https://en.wikipedia.org/wiki/Phishing", "https://en.wikipedia.org/wiki/Phishing"]
+    urls: {
+      pl: ["https://pl.malwarebytes.com/phishing/", "https://www.avast.com/pl-pl/c-phishing"],
+      en: ["https://www.phishing.org/what-is-phishing", "https://www.malwarebytes.com/phishing"]
+    }
   },
   {
     header: {
@@ -25,6 +28,11 @@ export const articlesData = [
       en: "Ransomware is a type of malicious software (malware) that aims to block access to a personal computer by encrypting all possible files. The duration of this procedure depends on the chosen encryption algorithm and the data on the encrypted device, among other factors, but for a normal home user it can execute in as little as two hours. Usually, this time is much longer, as a thorough reconnaissance of the system and directory structure is required before the process begins. In this way, the end user loses the ability to read data on his device, and in order to decrypt files, a key possessed by the attacker is required.<br><br>This type of malware is particularly dangerous for businesses, because the loss of important documents or financial data, can be associated with serious consequences, or inability to respond in time (e.g. submit an offer on time). The purpose of ransomware is not to delete or steal files, but to lock them, and wait for a possible ransom payment by the victim.<br><br>The leading source of acquisition of this malware is Remote Desktop Protocol (RDP) - a protocol that allows you to connect to a device running MS Windows, and take full control over it, used in companies as a tool to configure devices.<br><br>The next is phishing emails. This method usually involves the appropriate use of social engineering, with the goal of manipulating the victim into giving sensitive access credentials or running encryption software on their device. <br><br> The best method against this is to systematically perform data archiving. In a situation where ransomware gets into your computer and encrypts all your files, all that remains is to restore the backup. It is also a good idea to frequently update the operating system to eliminate potential security vulnerabilities.",
     },
     link: "ransomware",
+    categories: {
+      pl: ["Złośliwe oprogramowanie", "Wirus", "Szyfrowanie"],
+      en: ["Malware", "Virus", "Encrypting"]
+    },
+    urls: ["https://www.malwarebytes.com/ransomware", "https://www.kaspersky.com/resource-center/threats/ransomware"]
   },
   {
     header: {
