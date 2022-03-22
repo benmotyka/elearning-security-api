@@ -1,6 +1,7 @@
 import sendgrid from "@sendgrid/mail";
 import loggerConfig from "../../config/logger.js";
 const logger = loggerConfig({label: 'courses-resolver'})
+import defaultTemplate from "./templates/default.js";
 
 export const sendConfirmRegistrationEmail = (receiver, verificationToken) => {
   sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
@@ -9,7 +10,7 @@ export const sendConfirmRegistrationEmail = (receiver, verificationToken) => {
     to: receiver,
     from: process.env.SENDGRID_EMAIL_FROM,
     subject: "Confirm your registration",
-    html: `<br>Hello,<br><br>Thank you for registering at our site. <br><br>Please confirm your registration at: ${process.env.WEBSITE_URL}/register/confirm/${verificationToken} <br><br>Best regards,<br>Staysecure Team`,
+    html: defaultTemplate({textContent: `Thank you for registering on our site.<br/><br/>Please confirm your registration by clicking <a href="${process.env.WEBSITE_URL}/register/confirm/${verificationToken}">here</a><br><br>If the link doesn't work properly, please copy the following URL address and paste it to your browser: <br/><br/> ${process.env.WEBSITE_URL}/register/confirm/${verificationToken}`}),
   };
 
   sendgrid
@@ -29,7 +30,7 @@ export const sendForgotPasswordEmail = (receiver, verificationToken) => {
     to: receiver,
     from: process.env.SENDGRID_EMAIL_FROM,
     subject: "Reset your password",
-    html: `<br>Hello,<br><br>In order to reset your password, visit: ${process.env.WEBSITE_URL}/forgot-password/${verificationToken} <br><br>Best regards,<br>Staysecure Team`,
+    html: defaultTemplate({textContent: `In order to reset your password, please click <a href="${process.env.WEBSITE_URL}/forgot-password/${verificationToken}">here</a>.<br><br>If the link doesn't work properly, please copy the following URL address and paste it to yor browser: <br/><br/> ${process.env.WEBSITE_URL}/forgot-password/${verificationToken}`}),
   };
 
   sendgrid
