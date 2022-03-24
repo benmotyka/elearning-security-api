@@ -21,11 +21,11 @@ type RootQuery {
 }
 
 type RootMutation {
-    register(email: String!, name: String!, password: String!, captchaToken: String!, accountLevel: String!): Email
+    register(email: String!, name: String!, password: String!, captchaToken: String!, accountLevel: String!, language: String!): Email
     confirmEmail(token: String!): Email
     resetPassword(oldPassword: String!, newPassword: String!, captchaToken: String!): Email
     changeAccountLevel(newAccountLevel: String!): AccountLevel!
-    forgotPassword(email: String!, captchaToken: String!): Email
+    forgotPassword(email: String!, captchaToken: String!, language: String!): Email
     forgotPasswordChange(token: String!, password: String!, captchaToken: String!): Email
     addCourseToFinished(courseName: String!): Course
     addCourseToStarted(courseName: String!): Course

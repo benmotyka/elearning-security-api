@@ -72,7 +72,11 @@ export default {
     });
     await newAction.save();
     logger.info(`Sending confirm registration email from user: ${args.email}`)
-    sendConfirmRegistrationEmail(args.email, token);
+    sendConfirmRegistrationEmail({
+      receiver: args.email, 
+      verificationToken: token,
+      language: args.language
+    });
     return {email: result.email};
   },
   confirmEmail: async ({ token }) => {
@@ -89,7 +93,7 @@ export default {
       email: user._doc.email,
     };
   },
-  forgotPassword: async ({ email, captchaToken }) => {
+  forgotPassword: async ({ email, captchaToken, language }) => {
     await validateCaptcha(captchaToken);
     const user = await User.findOne({ email: email });
     logger.info(`User: ${email} used forgot password function`)
@@ -99,15 +103,19 @@ export default {
     }
     let token = uuidv4();
     const alreadySent = await UserActions.findOne({ userId: user.id });
-    if (alreadySent) {
-      throw new Error("email-sent-already");
-    }
+    // if (alreadySent) {
+    //   throw new Error("email-sent-already");
+    // }
     const newAction = new UserActions({
       userId: user.id,
       forgotPasswordToken: token,
     });
     await newAction.save();
-    sendForgotPasswordEmail(email, token);
+    sendForgotPasswordEmail({
+      receiver: email, 
+      verificationToken: token,
+      language
+    });
     return {
       email: user._doc.email,
     };

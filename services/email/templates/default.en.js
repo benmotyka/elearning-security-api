@@ -52,7 +52,7 @@ export default ({textContent}) => {
                                   <tr>
                                       <td style="padding:0;color:#fff;opacity:0.8;">
                                         <h5 style="font-size:20px;margin:0;font-family:Arial,sans-serif;">
-                                        Best regards,<br/>Staysecure Team
+                                        Staysecure Team
                                         </h5>
                                       </td>
                                   </tr>
