@@ -32,7 +32,10 @@ export const articlesData = [
       pl: ["Złośliwe oprogramowanie", "Wirus", "Szyfrowanie"],
       en: ["Malware", "Virus", "Encrypting"]
     },
-    urls: ["https://www.malwarebytes.com/ransomware", "https://www.kaspersky.com/resource-center/threats/ransomware"]
+    urls: {
+      pl: ["https://pl.malwarebytes.com/ransomware/", "https://bitdefender.pl/ransomware-co-to-jest-i-jak-sie-przed-tym-chronic/", "https://ransomware.pl/"],
+      en: ["https://www.mcafee.com/enterprise/en-us/security-awareness/ransomware.html", "https://www.malwarebytes.com/ransomware", "https://www.ibm.com/topics/ransomware"]
+    }  
   },
   {
     header: {
@@ -44,6 +47,14 @@ export const articlesData = [
       en: "Keyloggers usually appear in the form of malicious, hidden software. They are not visible at first glance to the user and in the vast majority of cases they run in the background, often impersonating another application, thus masking their presence.<br><br>The basic properties of this type of program can be described as taking control over the keyboard routines of the operating system on which it resides.<br><br>The main purpose of this software is to collect data about what keys on the keyboard have been pressed by the user and then periodically send the collected information to the attacker. By having knowledge of what was typed on the device, sensitive information such as private correspondence or confidential data can be easily accessed. More advanced features include sending screenshots, recording the history of opened programs and passing this information on.<br><br>Keyloggers, apart from their software form, also exist as separate devices that are connected to the unit usually via USB interface. They can also exist as an intermediary device between the keyboard and the computer's USB connector. <br><br>The way to avoid this type of software is first of all to systematically check the running processes, but also to use an appropriate antivirus.",
     },
     link: "keylogger",
+    categories: {
+      pl: ["Złośliwe oprogramowanie", "Złośliwe urządzenie", "Wirus", "Kradzież danych"],
+      en: ["Malware", "Malicious hardware", "Virus", "Data theft"]
+    },
+    urls: {
+      pl: ["https://gdata.pl/przewodnik/keylogger-jak-wykryc", "https://www.omegasoft.pl/blog/co-to-jest-keylogger-i-jak-go-usunac/"],
+      en: ["https://www.malwarebytes.com/keylogger", "https://securelist.com/keyloggers-how-they-work-and-how-to-detect-them-part-1/36138/", "https://www.ibm.com/topics/ransomware"]
+    }  
   },
   {
     header: {
@@ -55,6 +66,14 @@ export const articlesData = [
       en: "CSRF is an attack on web applications that aims to cause an end-user to perform an unwanted action on a website in which they are currently logged in. This type of attack is especially used when the web service software is not made according to OWASP security standards.<br><br>The necessary condition for this vulnerability to occur is an active user session on the given web site and an active authorization token, usually obtained as a server response to valid user credentials at the web site login mechanism. It is then stored in the browser's memory for a selected period of time.<br><br>A crafted request can be created in many ways. For example, in a situation where a bank customer wants to make a bank transfer, the created request in a vulnerable, mis-executed application would be in the following form:<br><br><samp>GET https://bank.com/transfer?amount=100&accountNumber=123456 HTTP/1.1. </samp><br><br>If the browser contains an authorization token stored in cookies or local memory, the victim, after accessing the hyperlinked <br><br><samp>https://bank.com/transfer?amount=100&accountNumber=123</samp><br><br><br>will unknowingly execute this request, which will result in the attacker transferring the specified amount of money to the selected account. This link can be delivered by using appropriate psychological means and manipulation methods (Social Engineering) or phishing emails. The application is not able to distinguish whether the request from the end client came as intended or not.<br><br>Today, the vast majority of web application development frameworks have mechanisms to protect the site under construction from this vulnerability. However, if your chosen technology does not have a built-in mechanism, you will need to add CSRF tokens to all requests affecting the application state. With each request to the server a one-time token should be sent - a string of random characters, and then it should be validated along with all data that are in the request body or parameters.",
     },
     link: "csrf",
+    categories: {
+      pl: ["Luka w oprogramowaniu", "Atak", "Aplikacje internetowe"],
+      en: ["Exploit", "Attack", "Web Application"]
+    },
+    urls: {
+      pl: ["https://sekurak.pl/czym-jest-podatnosc-csrf-cross-site-request-forgery/", "https://devloger.pl/co-to-jest-csrf-jak-to-dziala-laravel"],
+      en: ["https://owasp.org/www-community/attacks/csrf", "https://www.imperva.com/learn/application-security/csrf-cross-site-request-forgery/", "https://www.acunetix.com/websitesecurity/csrf-attacks/"]
+    }  
   },
   {
     header: {
@@ -66,6 +85,14 @@ export const articlesData = [
       en: "Path Traversal is the name for a web application security vulnerability that, if not addressed in the development process, can result in the leak of sensitive data from the server that hosts the application.<br><br>Thanks to server-side programming languages such as PHP, external scripts and files can be dynamically appended to applications. A critical element in this type of functionality is properly implemented file attachment logic and input validation, otherwise an attacker can read the contents of local as well as remote files. The goal of this vulnerability is to locate and properly exploit parameters passed to applications through which various scripts are dynamically attached.",
     },
     link: "path-traversal",
+    categories: {
+      pl: ["Luka w oprogramowaniu", "Atak", "Aplikacje internetowe"],
+      en: ["Exploit", "Attack", "Web Application"]
+    },
+    urls: {
+      pl: ["https://sekurak.pl/czym-jest-podatnosc-path-traversal/"],
+      en: ["https://owasp.org/www-community/attacks/Path_Traversal", "https://portswigger.net/web-security/file-path-traversal", "https://www.synopsys.com/glossary/what-is-path-traversal.html"]
+    }  
   },
   {
     header: {
@@ -77,6 +104,14 @@ export const articlesData = [
       en: "SQL injection is a web application vulnerability that involves modifying a database query sent to a database. The purpose of this attack may be to obtain information that under normal circumstances should not be accessed: other users' personal data, passwords, credit card numbers, etc. The attack can be executed by appropriately modifying input data, e.g. a password, products in a search engine, but also a URL. The vulnerability can also be exploited by using a proxy server, which is an intermediary between the end user and the server. It allows the attacker to modify the outgoing request, thus bypassing any input validation. <br><br>It is hard to imagine a fully functional Web site that does not use a database. The process of registering a user, paying for purchases, or changing a profile picture -- all of these activities require physical storage of information. They are usually realized by sending a request to the application running on the server, so that it communicates with the database and performs the appropriate operation.<br><br>The main reason why SQL Injection vulnerability occurs is because too little attention is paid to creating database queries. The parameters passed to the query should be filtered for special symbols, or for the occurrence of specific characters in the parameter, i.e. only letters and numbers.<br><br>When communicating with a relational database, it can be a good idea to use tools such as Query Builder or ORM (Object-Relational Mapping) to simplify communication with the database by mapping tables and relationships to objects, and eliminate the possibility of security vulnerabilities such as SQL Injection. As an example of a Query Builder, consider Knex.js, an open-source library created for the Node.js runtime environment. Queries created in query builders are not only more secure than SQL queries - they are also universal to any database engine.<br><br>SQL Injection is a security vulnerability that can pose a serious threat not only to the database system, but also to the entire enterprise. Without proper validation of input data, it can lead to a situation where an attacker can gain access to confidential information, or even delete part of the database. Despite the fact that it is a relatively simple vulnerability to execute and its origins date back to 1998, it is still one of the most common and dangerous vulnerabilities in server-side applications.",
     },
     link: "sql-injection",
+    categories: {
+      pl: ["Luka w oprogramowaniu", "Atak", "Aplikacje internetowe", "Kradzież danych", "Atak na bazę danych"],
+      en: ["Exploit", "Attack", "Web Application", "Data theft", "Database attack"]
+    },
+    urls: {
+      pl: ["https://sekurak.pl/czym-jest-sql-injection/", "https://www.avast.com/pl-pl/c-sql-injection", "https://ochronasieci.pl/zagrozenia-w-sieci/sql-injection/"],
+      en: ["https://portswigger.net/web-security/sql-injection", "https://owasp.org/www-community/attacks/SQL_Injection", "https://www.imperva.com/learn/application-security/sql-injection-sqli/"]
+    }
   },
   {
     header: {
