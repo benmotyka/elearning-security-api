@@ -10,8 +10,8 @@ export const articlesData = [
     },
     link: "phishing",
     categories: {
-      pl: ["Inżynieria społeczna", "Kradzież danych", "Fałszywa strona", "Manipulacja"],
-      en: ["Social engineering", "Data theft", "Fake website", "Manipulation"]
+      pl: ["Inżynieria społeczna", "Kradzież danych", "Fałszywa strona", "Manipulacja", "Atak na użytkownika"],
+      en: ["Social engineering", "Data theft", "Fake website", "Manipulation", "User attack"]
     },
     urls: {
       pl: ["https://pl.malwarebytes.com/phishing/", "https://www.avast.com/pl-pl/c-phishing"],
@@ -123,6 +123,14 @@ export const articlesData = [
       en: "Cross-site scripting (XSS) is one of the most dangerous vulnerabilities of modern web applications. XSS is an attack directed at the client using a web service, in contrast to e.g. SQL Injection, which targets the server-side application. Cross-site scripting is mainly based on injecting a malicious script into a web page, which, for example, can read a user's cookies or other sensitive information stored in the browser, send it to an attacker so that the attacker -- using the cookie data -- can log into the account of the user who unknowingly ran the script. Through this attack, it is also possible to run a Keylogger running in the browser, or completely change the content of a website.<br><br>A report prepared in 2017 by Wordfence, a commercial organization dedicated to securing websites from all kinds of dangers, shows that this type of vulnerability accounts for nearly half of all vulnerabilities on the web.<br><br>While describing XSS, it is impossible not to mention the Same-origin policy. It is one of many fundamental security mechanisms, implemented in every web browser. It does not allow any page to take an action or read the content of another page, for example in two browser tabs. Therefore, anything that happens on a web page opened by a user is isolated and will not affect the other pages opened.<br><br>The entire structure of an HTML-encoded web page can be changed through JavaScript, using the DOM API. As a result, a simple script can completely change the content, appearance, and most importantly, the functionality of a web page.<br><br>Cookies are called small pieces of information sent by a server to an end device's web browser. They are used to save data objects in the browser, which when you visit the site again, can be sent to the same server from which they came. As a result, when visiting various sites that require authentication, the user does not need to log in every time because all the necessary data is contained in cookies that are sent along with the request.<br><br>XSS attacks can be divided into three main categories:<ul><li>Reflected XSS - a malicious script is placed in the URL. After entering the hyperlink, the victim unknowingly executes a pre-prepared script, resulting in code execution in the browser.</li><li>Stored XSS - involves placing the script on the server side, for example as a message on a social networking site. When the victim reads it, a previously prepared script is automatically executed, which can result in another user's session cookie being sent to the attacker, allowing them to place the stolen cookie in the browser and gain unauthorized access to the victim's account.</li><li>DOM Based XSS - an attack closely related to modifying the DOM structure. The HTTP response itself is not changed, but the client-side code in the application is executed in a different way due to the modifications that took place in the DOM environment.</li></ul> The most common place where this vulnerability can be found is in forms, where the user enters content that is then displayed. If the content that the user has submitted is not properly sanitized, a situation can arise where the user injects a malicious script.<br><br>Browsers have been equipped with many tools to combat this vulnerability, such as the JavaScript Malicious Code Detection System. This mechanism consists of the browser's built-in script analysis component and the Intrusion Detection System (IDS), which processes client-side activity and compares it with known malicious scripts. This system makes it possible to detect various types of XSS attacks. However, the system has a significant drawback: it can only detect situations whose behavior is known to it -- it is not immune to new types of attack.<br><br>Despite many security features that are built into browsers, browsers cannot distinguish whether a given script is malicious or not -- so the resistance of a web application to this type of attack is primarily on the developers' side.<br><br>The most effective protection against XSS attacks is to filter incoming data from the user before it should be displayed in the application, for example by replacing HTML tag characters with special characters. It can also be effective to sanitize user input from elements common to any XSS attack, such as the &lt;script&gt;&lt;/script&gt; tags.",
     },
     link: "xss",
+    categories: {
+      pl: ["Luka w oprogramowaniu", "Atak", "Aplikacje internetowe", "Kradzież danych", "Atak na użytkownika"],
+      en: ["Exploit", "Attack", "Web Application", "Data theft", "Database attack", "User attack"]
+    },
+    urls: {
+      pl: ["https://sekurak.pl/czym-jest-xss/", "https://www.avast.com/pl-pl/c-xss", "https://mansfeld.pl/bezpieczenstwo/xss-cross-site-scripting-co-to-jest/"],
+      en: ["https://owasp.org/www-community/attacks/xss/", "https://portswigger.net/web-security/cross-site-scripting", "https://www.acunetix.com/websitesecurity/cross-site-scripting/"]
+    }
   },
   {
     header: {
@@ -134,6 +142,14 @@ export const articlesData = [
       pl: "Celem Blokady usług (ang. Denial Of Service) są zazwyczaj serwisy internetowe małych i średnich przedsiębiorstw. Atak ten polega na wykonaniu tak wielu żądań do serwera w jednostkowym czasie, aby ten przestał odpowiadać. Są relatywnie proste w egzekucji i mogą być powodem poważnych strat dla sieci i systemów komputerowych. Większa część ataków typu odbywa się w oparciu o luki w protokole TCP, co prowadzi do takich ataków jak TCP SYN Flood DoS<br><br>Rodzaj DOS może różnić się w zależności od warstwy modelu OSI, na której wysyłane są pakiety. Do głównych rodzajów tego ataku zaliczyć można SYN Flood, HTTP Flood, Smurf Attack.<br><br>W momencie, w którym klient chce nawiązać połączenie z serwerem, obie maszyny sekwencyjnie wymieniają zestaw komunikatów, znany także jako uzgadnianie trój-etapowe - 3-Way Handshake<ol><li>W pierwszym kroku klient wysyła segment z SYN (ang. Synchronize Sequence Number), który informuje serwer, że klient prawdopodobnie rozpocznie komunikację i z jakim numerem sekwencyjnym uruchamia segmenty.</li><li>Kolejno serwer odpowiada na żądanie klienta z ustawionymi bitami sygnału SYN-ACK. Potwierdzenie (ACK) to odpowiedź segmentu, który otrzymał, a SYN oznacza, z jakim numerem sekwencji prawdopodobnie rozpoczną się segmenty.</li><li>W końcowej części klient potwierdza odpowiedź serwera i oboje ustanawiają połączenie, w którym rozpocznie rzeczywisty transfer danych.</li></ol>SYN Flood polega na nadużyciu wyżej opisanej procedury. Atakujący przesyła do serwera falę komunikatów SYN, używając spreparowanych adresów IP. Niczego nieświadomy serwer odpowiada na żądania komunikatem SYN-ACK, po czym oczekuje na odpowiedź ACK od klienta celem sfinalizowania uzgodnienia trój-etapowego. Z racji faktu, iż serwer oczekuje na zakończenie komunikatu z fałszywymi adresami IP, połączenie to nigdy nie dojdzie do skutku. Efektem tego jest przeładowanie kolejki połączeń i ostatecznie pamięci operacyjnej serwera, powodując brak odpowiedzi na żądania zwykłych użytkowników.<br><br>Blokada danego adresu IP, z którego przychodzi wiele żądań w krótkim okresie czasu, nie stanowi większego problemu dla firewalli, dlatego też coraz powszechniejszymi stają się ataki DDOS - Distributed Denial-Of-Service. Różnica polega na tym, że żądania wysyłane są z wielu lokacji jednocześnie, co znacznie bardziej utrudnia identyfikację i zablokowanie nagłego ruchu przez zaporę ogniową.<br><br>Szybka detekcja nienaturalnego obciążenia serwera ma kluczowe znaczenie dla ochrony przed atakiem DDOS. W przypadku przedsiębiorstw wiąże się to także z zapewnieniem akceptowalnej jakości usług dla klientów. Istnieje wiele rozwiązań, które pozwalają wykrywać powyżej opisany incydent. Można je podzielić według sposobu ich działania i złożoności wykrywania. Do najskuteczniejszych rozwiązań należy analiza statystyczna ruchu, logika rozmyta, stosowanie sztucznych sieci neuronowych czy techniki eksploracji ukrytych zależności w repozytoriach danych.<br><br>Ataki Denial of Service stanowią zdecydowanie większe zagrożenie dla klasycznego modelu hostingu strony webowej, w którym celem zapewnienia dostępności serwisu korzysta się z fizycznych serwerów. W sytuacji, w której obciążenie aplikacji wzrośnie, przykładowo na skutek omawianego ataku, jedynym rozwiązaniem jest filtrowanie i odrzucanie potencjalnych złośliwych żądań - nie ma opcji na szybkie zwiększenie zasobów.<br><br>W dzisiejszych czasach zdecydowanie lepszym rozwiązaniem zarówno pod kątem finansowym, jak i prostoty są publiczne chmury obliczeniowe, takie jak AWS (ang. Amazon Web Services), Microsoft Azure lub GCP (ang. Google Cloud Platform). Ich bogata oferta zapewnia podstawowe usługi takie jak dedykowane serwery, wirtualne sieci i interfejsy sieciowe czy usługi przechowywania danych. Ponadto chmury oferują usługi zaawansowanych mechanizmów przeciwdziałania atakom typu DDOS. Przykładem może być funkcjonalność chmury AWS w postaci grupy auto-skalującej (ang. auto-scaling group). Usługa ta dostosowuje liczbę instancji serwerowych w zależności od aktualnie panującego ruchu. Tak więc przy normalnych warunkach, gdy obciążenie serwera jest na niskim poziomie, w grupie może znajdować się jedna instancja serwerowa. Gdy tylko określony zasób przekroczy wcześniej zadeklarowaną wartość, na przykład zasoby procesora osiągną 80% dostępnych zasobów w okresie minuty, automatycznie zostanie stworzona kolejna instancja serwerowa na podstawie pierwotnej. Tym samym ruch sieciowy zostanie rozłożony pomiędzy dwa serwery, zamiast jednego.<br><br>Dobrym rozwiązaniem na tego typu ataki może być również użycie systemu równoważenia obciążenia - load balancera. Jest to mechanizm, wykorzystywany w serwisach internetowych korzystających z większej ilości instancji serwerowych. W rezultacie każde połączenie jest przekierowane do jednego z dostępnych serwerów według następujących algorytmów:<ul><li>Round Robin - nadchodzące żądanie zostanie przekierowane do każdego serwera po kolei. Gdy dojdzie do końca, system równoważenia obciążenia zapętli się z powrotem.</li><li>Least Connections - Load Balancer prześle żądanie do jednego z serwerów, które aktualnie procesują najmniejszą ilość żądań.</li><li>IP Hash - żądanie zostanie skierowane do najbliższego serwera pod kątem geolokalizacji.</li></ul>Ataki DOS są bezpośrednim zagrożeniem dla dostępności aplikacji webowych. Jeśli złośliwy ruch jest odpowiednio duży i nie zostanie szybko zidentyfikowany, może z łatwością przyczynić się do wyłączenia strony internetowej na nieokreślony czas. Dzięki wielu łatwo dostępnym narzędziom, takim jak systemy równoważenia obciążenia, grupy auto-skalujące, firewalle, ochrona przed tego typu zagrożeniem stała się dużo łatwiejsza niż kiedykolwiek.",
     },
     link: "ddos",
+    categories: {
+      pl: ["Atak", "Serwer webowy", "Zatrzymanie ruchu", "Atak na serwer"],
+      en: ["Attack", "Web Server", "Flood attack", "Web Server attack"]
+    },
+    urls: {
+      pl: ["https://www.orange.pl/poradnik/twoj-internet/co-to-jest-atak-ddos/", "https://pomoc.home.pl/baza-wiedzy/co-to-jest-atak-ddos", "https://www.ovh.pl/anty-ddos/ochrona-przed-ddos.xml"],
+      en: ["https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/", "https://www.imperva.com/learn/ddos/ddos-attacks/", "https://www.kaspersky.com/resource-center/threats/ddos-attacks"]
+    }
   },
   {
     header: {
@@ -145,6 +161,14 @@ export const articlesData = [
       en: "It is a type of malware that is installed on the victim's device without their knowledge. It acquires sensitive information, such as browser usage data, and then passes it on to the attacker.",
     },
     link: "spyware",
+    categories: {
+      pl: ["Kradzież danych", "Atak na użytkownika", "Inżynieria społeczna"],
+      en: ["Data theft", "User attack", "Social engineering"]
+    },
+    urls: {
+      pl: ["https://www.avast.com/pl-pl/c-spyware", "https://pl.malwarebytes.com/spyware/", "https://pomoc.home.pl/baza-wiedzy/co-to-jest-spyware-i-jak-sie-przed-tym-chronic"],
+      en: ["https://www.kaspersky.com/resource-center/threats/spyware", "https://www.techtarget.com/searchsecurity/definition/spyware", "https://us.norton.com/internetsecurity-malware-spyware.html"]
+    }
   },
   {
     header: {
@@ -156,7 +180,16 @@ export const articlesData = [
       en: "Type of malware that bypasses authentication procedures to gain access to the system on which it exists. As a result, access to sensitive resources such as databases or file servers at a certain location does not require authentication. This gives attackers the ability to remotely issue system commands",
     },
     link: "backdoor",
+    categories: {
+      pl: ["Atak na serwer", "Atak na aplikację", "Kradzież danych"],
+      en: ["Web Server attack", "Application attack", "Data theft"]
+    },
+    urls: {
+      pl: ["https://bitdefender.pl/abc-cyberbezpieczenstwa-b-jak-backdoor/", "https://sekurak.pl/backdoory-w-aplikacjach-php/"],
+      en: ["https://www.malwarebytes.com/backdoor", "https://www.imperva.com/learn/application-security/backdoor-shell-attack/", "https://www.trendmicro.com/vinfo/us/security/definition/backdoor"]
+    }
   },
+  /*
   {
     header: {
       en: "Hijackware",
@@ -168,7 +201,6 @@ export const articlesData = [
     },
     link: "hijackware",
   },
-  /*
   {
     header: "Robak",
     description: "TODO.",
