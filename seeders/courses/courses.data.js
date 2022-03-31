@@ -38,7 +38,7 @@ export const coursesData = [
     {
         header: {
             pl: "Blokada usług",
-            en: "DDOS"
+            en: "DDoS"
         },
         description: {
             pl: "Potencjalne skutki sztucznego obciążenia serwisu internetowego",
@@ -71,16 +71,16 @@ export const coursesData = [
         link: "keylogger",
         difficulty: 1
     },
-    {
-        header: {
-            pl: "Atak man-in-the-middle",
-            en: "Man-in-the-middle attack"
-        },
-        description: {
-            pl: "Atak sieciowy umożliwiający podsłuchiwanie danych",
-            en: "The eavesdropping network attack"
-        },
-        link: "mitm",
-        difficulty: 2
-    }
+    // {
+    //     header: {
+    //         pl: "Atak man-in-the-middle",
+    //         en: "Man-in-the-middle attack"
+    //     },
+    //     description: {
+    //         pl: "Atak sieciowy umożliwiający podsłuchiwanie danych",
+    //         en: "The eavesdropping network attack"
+    //     },
+    //     link: "mitm",
+    //     difficulty: 2
+    // }
 ]
