@@ -18,6 +18,7 @@ type RootQuery {
     getQuizData(courseLink: String!): QuizData
     getQuizSummaryData(courseLink: String!): QuizSummaryData
     getCourseRating(courseLink: String!): CourseRate!
+    getOverallQuizesData: [OverallQuizesData]
 }
 
 type RootMutation {
@@ -172,5 +173,9 @@ type CourseComment {
     username: String!
     comment: String!
     createdAt: String! 
+}
+
+type OverallQuizesData {
+    value: Float!
 }
 `);
