@@ -18,7 +18,7 @@ type RootQuery {
     getQuizData(courseLink: String!): QuizData
     getQuizSummaryData(courseLink: String!): QuizSummaryData
     getCourseRating(courseLink: String!): CourseRate!
-    getOverallQuizesData: [OverallQuizesData]
+    getOverallQuizesData: OverallQuizesData
 }
 
 type RootMutation {
@@ -176,6 +176,17 @@ type CourseComment {
 }
 
 type OverallQuizesData {
+    overallScore: [ChartValue]
+    finishedQuizes: [QuizSummaryShort]
+}
+
+type ChartValue {
     value: Float!
+}
+
+type QuizSummaryShort {
+    scorePercentage: Int!
+    header: LanguageType!
+    link: String!
 }
 `);

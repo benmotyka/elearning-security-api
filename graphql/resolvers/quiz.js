@@ -149,12 +149,7 @@ export default {
             quizId: quiz.id,
             userId: user.id,
           }).sort({ createdAt: -1 });
-          return quizAttempt
-            ? {
-                quizId: quizAttempt._id,
-                scorePercentage: quizAttempt.scorePercentage,
-              }
-            : null;
+          return quizAttempt ? quizAttempt : null;
         })
       );
       const quizAttempts = rawQuizAttempts.filter((item) => item);
@@ -164,13 +159,26 @@ export default {
         0
       );
 
-      if (!overallPercentage) 
-        return [{ value: 0 }, { value: 0 }];
+      if (!overallPercentage) return null;
 
-        // round numbers to 100
-      const overallSuccess = Math.round((overallPercentage / quizAttempts.length) * 100)
+      const finishedQuizes = quizAttempts.map((quizAttempt) => ({
+        scorePercentage: quizAttempt.scorePercentage * 100,
+        header: quizAttempt.quizId.courseId.header,
+        link: quizAttempt.quizId.courseId.link,
+      }));
 
-      return [{ value: overallSuccess }, { value: 100 - overallSuccess }];
+      // round numbers to 100
+      const overallSuccess = Math.round(
+        (overallPercentage / quizAttempts.length) * 100
+      );
+
+      return {
+        overallScore: [
+          { value: overallSuccess },
+          { value: 100 - overallSuccess },
+        ],
+        finishedQuizes
+      };
     } catch (error) {
       logger.error(`Error in getting overall quizes data: ${error}`);
     }
