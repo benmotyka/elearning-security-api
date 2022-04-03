@@ -159,7 +159,8 @@ export default {
         0
       );
 
-      if (!overallPercentage) return null;
+      if (!overallPercentage)
+        return { overallScore: null, finishedQuizes: null };
 
       const finishedQuizes = quizAttempts.map((quizAttempt) => ({
         scorePercentage: quizAttempt.scorePercentage * 100,
@@ -177,7 +178,7 @@ export default {
           { value: overallSuccess },
           { value: 100 - overallSuccess },
         ],
-        finishedQuizes
+        finishedQuizes,
       };
     } catch (error) {
       logger.error(`Error in getting overall quizes data: ${error}`);
