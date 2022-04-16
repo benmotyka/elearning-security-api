@@ -81,6 +81,7 @@ type CourseLink {
 }
 
 type LoginData {
+    email: String
     userId: ID!
     token: String!
     tokenExpiration: Int

@@ -44,7 +44,7 @@ export default {
         process.env.JWT_SECRET,
         { expiresIn: TOKEN_EXP }
       );
-    return { userId: user.id, name: user.name, token: token, tokenExpiration: TOKEN_EXP, accountLevel: user.accountLevel };
+    return { userId: user.id, email: user.email, name: user.name, token: token, tokenExpiration: TOKEN_EXP, accountLevel: user.accountLevel };
     }
   },
   register: async (args) => {
