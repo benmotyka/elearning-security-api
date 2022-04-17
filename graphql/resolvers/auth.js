@@ -103,9 +103,9 @@ export default {
     }
     let token = uuidv4();
     const alreadySent = await UserActions.findOne({ userId: user.id });
-    // if (alreadySent) {
-    //   throw new Error("email-sent-already");
-    // }
+    if (alreadySent) {
+      throw new Error("email-sent-already");
+    }
     const newAction = new UserActions({
       userId: user.id,
       forgotPasswordToken: token,

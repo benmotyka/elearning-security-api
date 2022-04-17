@@ -3,7 +3,9 @@ import bcrypt from "bcryptjs";
 import validateCaptcha from "../../functions/captcha/validateCaptcha.js";
 import loggerConfig from "../../config/logger.js"
 const logger = loggerConfig({label: 'courses-resolver'})
-
+import {
+  sendContactMail,
+} from "../../services/email/sendEmail.js";
 export default {
   resetPassword: async (args, req) => {
     await validateCaptcha(args.captchaToken);
@@ -54,5 +56,14 @@ export default {
     logger.info(`Getting info of user: ${user.email}`)
 
     return (user._doc)
+  },
+  sendContactMessage: async ({email, subject, content, captchaToken}) => {
+    await validateCaptcha(captchaToken);
+    sendContactMail({
+      sender: email, 
+      subject,
+      content
+    });
+    return {resultStatus: 'ok'}
   }
 };

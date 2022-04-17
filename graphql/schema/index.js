@@ -19,6 +19,7 @@ type RootQuery {
     getQuizSummaryData(courseLink: String!): QuizSummaryData
     getCourseRating(courseLink: String!): CourseRate!
     getOverallQuizesData: OverallQuizesData
+    sendContactMessage(email: String!, subject: String!, content: String!, captchaToken: String!): Status!
 }
 
 type RootMutation {
@@ -63,7 +64,6 @@ type QuizSummaryAnswer {
 type Status {
     resultStatus: String!
 }
-
 
 type QuizSummaryData {
     quizName: LanguageType

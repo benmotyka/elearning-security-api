@@ -56,3 +56,27 @@ export const sendForgotPasswordEmail = ({receiver, verificationToken, language})
       console.error(error);
     });
 };
+
+export const sendContactMail = ({
+  sender, 
+  subject,
+  content
+}) => {
+  sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+
+  const mail = {
+    to: 'benmotykax@gmail.com',
+    from: process.env.SENDGRID_EMAIL_FROM,
+    subject: `Contact mail from ${sender}`,
+    html: `<p>Subject: ${subject}</p><p>Content: ${content}</p>`
+  };
+
+  sendgrid
+  .send(mail)
+  .then(() => {
+    logger.info(`Contact email sent from user: ${sender}`)
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+}
