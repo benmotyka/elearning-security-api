@@ -66,7 +66,7 @@ export default {
     });
     return {resultStatus: 'ok'}
   },
-  deleteAccount: async ({password}) => {
+  deleteAccount: async ({password}, req) => {
     if (!req.isAuth) {
       throw new Error("unauthenticated");
     }
