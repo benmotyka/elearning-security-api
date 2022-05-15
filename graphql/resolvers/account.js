@@ -65,5 +65,26 @@ export default {
       content
     });
     return {resultStatus: 'ok'}
+  },
+  deleteAccount: async ({password}) => {
+    if (!req.isAuth) {
+      throw new Error("unauthenticated");
+    }
+    const user = await User.findById(req.userId);
+    if (!user) {
+      throw new Error("user-doesnt-exist");
+    }
+
+    logger.info(`User: ${user.email} used delete account function from my account`)
+
+    const isEqual = await bcrypt.compare(password, user.password);
+    if (!isEqual) {
+      throw new Error("wrong-password");
+    }
+    logger.info(`Deleting account for user: ${user.email}`)
+
+    await user.updateOne({ deletedAt: new Date() });
+
+    return ({resultStatus: 'ok'})
   }
 };

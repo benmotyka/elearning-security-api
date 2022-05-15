@@ -34,6 +34,7 @@ type RootMutation {
     restartCourseAndQuiz(courseName: String!): Course
     finishQuiz(courseLink: String!, userAnswers: String!): QuizScore
     rateCourse(courseName: String!, rate: Int!, comment: String, captchaToken: String!): Status
+    deleteAccount(password: String!): Status
 }
 
 type QuizData {

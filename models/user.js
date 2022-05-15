@@ -39,6 +39,10 @@ const userSchema = new mongoose.Schema(
       ref: "Quiz",
       autopopulate: true,
     }],
+    deletedAt: {
+      type: Date,
+      required: false,
+    },
   },
   { timestamps: true }
 );
