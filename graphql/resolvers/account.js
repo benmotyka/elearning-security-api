@@ -83,7 +83,7 @@ export default {
     }
     logger.info(`Deleting account for user: ${user.email}`)
 
-    await user.updateOne({ deletedAt: new Date() });
+    await user.updateOne({ deletedAt: new Date(), email: `${user.email}_deleted`, password: 'deleted' });
 
     return ({resultStatus: 'ok'})
   }

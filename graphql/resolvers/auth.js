@@ -19,7 +19,7 @@ export default {
     const TOKEN_EXP = 6000;
     const user = await User.findOne({ email: args.userInput.email });
 
-    if (!user || !user.emailVerified) {
+    if (!user || !user.emailVerified || user.deletedAt) {
       logger.info(`User: ${args.userInput.email} doesn't exist or is not verified`)
       throw new Error("invalid-user-or-password");
     }
