@@ -46,7 +46,7 @@
 
 Server app for [https://staysecure.pl](https://staysecure.pl) website. 
 
-Please refer to [https://github.com/benmotyka/staysecure_front](https://github.com/benmotyka/staysecure_front) to get more information about project.
+Please refer to [https://github.com/benmotyka/staysecure_front](https://github.com/benmotyka/staysecure_front) to get more information about the project.
 
 ### Built With
 
@@ -63,7 +63,7 @@ Please refer to [https://github.com/benmotyka/staysecure_front](https://github.c
 
 - [Node.js](https://nodejs.org/en/download/)
 - [MongoDB database](https://cloud.mongodb.com/)
-- [Sendgrid account](https://cloud.mongodb.com/)
+- [Sendgrid account](https://sendgrid.com/)
 - [reCAPTCHA](https://www.google.com/recaptcha/about/)
 
 ### Installation
