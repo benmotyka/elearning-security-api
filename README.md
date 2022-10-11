@@ -9,7 +9,6 @@
   <h3 align="center">Cybersecurity courses</h3>
   <h5 align="center">Back-end App</h5>
   <p align="center">
-    <a href="https://staysecure.pl"><h4>Explore the page »</h4></a>
     <a href="https://github.com/benmotyka/staysecure_api/issues">Report Bug</a>
     ·
     <a href="https://github.com/benmotyka/staysecure_api/issues">Request Feature</a>
