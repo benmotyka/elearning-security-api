@@ -13,10 +13,7 @@ import http from "http"
 dotenv.config();
 const app = express();
 
-const corsOptions = {
-  origin: process.env.WEBSITE_URL,
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+const corsOptions = {}
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
@@ -35,6 +32,7 @@ const port = process.env.PORT || 3000;
 connectDatabase()
   .then(() => {
     http.createServer(app).listen(port, () => {
+      console.log(process.env.WEBSITE_URL)
       console.log("Api listening on port: " + port);
     });
   })
