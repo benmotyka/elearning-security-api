@@ -65,9 +65,10 @@ Please refer to [https://github.com/benmotyka/staysecure_front](https://github.c
 
 ### Installation
 
-1. Clone this repo
+1. Clone this repo and enter project
    ```sh
    git clone https://github.com/benmotyka/staysecure_api.git
+   cd staysecure_api/
    ```
 2. Install NPM packages
    ```sh
