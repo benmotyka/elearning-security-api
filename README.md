@@ -85,8 +85,11 @@ Please refer to [https://github.com/benmotyka/staysecure_front](https://github.c
 
    JWT_SECRET=<secret_key>
    
-   SENDGRID_API_KEY=<sendgrid_api_key>
-   SENDGRID_EMAIL_FROM=<sendgrid_email_from>
+   SMTP_HOST=<host>
+   SMTP_PORT=<port>
+   SMTP_USER=<user>
+   SMTP_PASSWORD=<password>
+   SMTP_EMAIL=<email>
 
    CAPTCHA_SECRET=<captcha_secret>
    ```
